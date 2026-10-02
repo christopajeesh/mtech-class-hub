@@ -308,10 +308,21 @@ router.get('/files', (req, res) => {
 
   let files = store.files || [];
 
-  if (semesterId) files = files.filter(f => f.semesterId === semesterId);
-  if (subjectId) files = files.filter(f => f.subjectId === subjectId);
-  if (moduleNumber) files = files.filter(f => f.moduleNumber === parseInt(moduleNumber, 10));
-  if (category) files = files.filter(f => f.category.toLowerCase() === category.toLowerCase());
+  if (semesterId && semesterId !== 'all') files = files.filter(f => f.semesterId === semesterId);
+  if (subjectId && subjectId !== 'all') files = files.filter(f => f.subjectId === subjectId);
+  if (moduleNumber && moduleNumber !== 'all') files = files.filter(f => f.moduleNumber === parseInt(moduleNumber, 10));
+  
+  if (category && category !== 'all') {
+    const qCat = category.toLowerCase().trim();
+    if (qCat.includes('question') || qCat.includes('paper') || qCat.includes('bank')) {
+      files = files.filter(f => {
+        const fc = (f.category || '').toLowerCase();
+        return fc.includes('question') || fc.includes('paper') || fc.includes('bank');
+      });
+    } else {
+      files = files.filter(f => (f.category || '').toLowerCase() === qCat);
+    }
+  }
 
   if (search) {
     const q = search.toLowerCase();
@@ -364,10 +375,37 @@ router.post('/files/upload', upload.any(), (req, res) => {
       }
     }
 
+    // Normalize category: any question paper/bank variant becomes 'Question Paper'
+    let savedCategory = category || 'Notes';
+    if (savedCategory.toLowerCase().includes('question') || savedCategory.toLowerCase().includes('bank') || savedCategory.toLowerCase().includes('paper')) {
+      savedCategory = 'Question Paper';
+    }
+
+    let savedExamType = examType || null;
+    let savedYear = year ? parseInt(year, 10) : null;
+    if (savedCategory === 'Question Paper') {
+      if (!savedExamType) savedExamType = 'Internal 1';
+      if (!savedYear) savedYear = new Date().getFullYear();
+    }
+
     const createdFiles = [];
 
     if (req.files && req.files.length > 0) {
-      req.files.forEach((f, index) => {
+      // Deduplicate files by originalname and size to prevent any accidental double-posting
+      const seenFiles = new Set();
+      const uniqueFiles = [];
+      for (const f of req.files) {
+        const key = `${f.originalname}_${f.size}`;
+        if (!seenFiles.has(key)) {
+          seenFiles.add(key);
+          uniqueFiles.push(f);
+        } else {
+          // Clean up duplicate disk file created by multer
+          try { fs.unlinkSync(f.path); } catch (e) {}
+        }
+      }
+
+      uniqueFiles.forEach((f, index) => {
         const originalName = f.originalname;
         const fileType = f.mimetype || 'application/octet-stream';
         const size = f.size;
@@ -389,12 +427,12 @@ router.post('/files/upload', upload.any(), (req, res) => {
           subjectName,
           moduleNumber: modNum,
           moduleTag: modTag,
-          category: category || 'Notes',
+          category: savedCategory,
           uploadedBy: uploadedBy || store.settings.members[0] || 'Christo',
           uploadedAt: new Date().toISOString(),
           description: description || '',
-          examType: examType || null,
-          year: year ? parseInt(year, 10) : null,
+          examType: savedExamType,
+          year: savedYear,
           extractedContent: notesText || description || ''
         };
 
@@ -415,12 +453,12 @@ router.post('/files/upload', upload.any(), (req, res) => {
         subjectName,
         moduleNumber: modNum,
         moduleTag: modTag,
-        category: category || 'Notes',
+        category: savedCategory,
         uploadedBy: uploadedBy || store.settings.members[0] || 'Christo',
         uploadedAt: new Date().toISOString(),
         description: description || '',
-        examType: examType || null,
-        year: year ? parseInt(year, 10) : null,
+        examType: savedExamType,
+        year: savedYear,
         extractedContent: notesText || description || ''
       };
       store.files.push(newFile);

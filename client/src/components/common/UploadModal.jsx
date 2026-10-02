@@ -114,6 +114,25 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
   const [success, setSuccess] = useState(false);
   const [uploadedCount, setUploadedCount] = useState(0);
 
+  // Immediately synchronize props whenever modal opens
+  useEffect(() => {
+    if (isOpen) {
+      if (initialCategory) {
+        const cat = initialCategory.toLowerCase();
+        if (cat.includes('question') || cat.includes('bank') || cat.includes('paper')) {
+          setCategory('Question Paper');
+        } else {
+          setCategory(initialCategory);
+        }
+      }
+      if (initialSemester) setSemesterId(initialSemester);
+      if (initialSubject) setSubjectId(initialSubject);
+      if (initialModule) setModuleNumber(String(initialModule));
+      setSelectedFiles([]);
+      setError('');
+    }
+  }, [isOpen, initialCategory, initialSemester, initialSubject, initialModule]);
+
   // Load semesters and subjects
   useEffect(() => {
     if (!isOpen) return;
@@ -135,16 +154,12 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
         } else if (validSubjects.length > 0) {
           setSubjectId(validSubjects[0].id);
         }
-
-        if (initialCategory) {
-          setCategory(initialCategory);
-        }
       } catch (err) {
         console.error('Failed to load upload metadata:', err);
       }
     };
     loadData();
-  }, [isOpen, initialSemester, initialSubject, initialCategory, settings.activeSemester]);
+  }, [isOpen, initialSemester, initialSubject, settings.activeSemester]);
 
   // When semester changes, update available subjects (excluding DI which is purely for assignments)
   const filteredSubjects = subjects.filter(s => 
@@ -237,8 +252,6 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
         selectedFiles.forEach((file) => {
           formData.append('files', file);
         });
-        // also pass single file reference for backward compatibility
-        formData.append('file', selectedFiles[0]);
 
         formData.append('semesterId', semesterId);
         formData.append('subjectId', subjectId);
@@ -247,11 +260,11 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
           formData.append('moduleTag', `Mod ${moduleNumber}`);
         }
         formData.append('category', category);
-        formData.append('description', description || assignmentTopic);
+        formData.append('description', description || assignmentTopic || '');
         formData.append('uploadedBy', currentUser);
-        if (category === 'Question Paper') {
-          formData.append('examType', examType);
-          formData.append('year', year);
+        if (category === 'Question Paper' || category === 'Question Bank') {
+          formData.append('examType', examType || 'Internal 1');
+          formData.append('year', String(year || new Date().getFullYear()));
         }
 
         const res = await fileApi.upload(formData);

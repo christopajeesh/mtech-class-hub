@@ -67,13 +67,16 @@ export const QuestionPapersPage = () => {
 
   // Filter papers
   const filteredPapers = questionPapers.filter((qp) => {
-    if (selectedSemester !== 'all' && qp.semesterId !== selectedSemester) return false;
-    if (selectedSubject !== 'all' && qp.subjectId !== selectedSubject) return false;
-    if (selectedExamType !== 'All Types' && qp.examType !== selectedExamType) return false;
-    if (selectedYear !== 'all' && qp.year !== parseInt(selectedYear, 10)) return false;
+    if (selectedSemester !== 'all' && qp.semesterId && qp.semesterId !== selectedSemester) return false;
+    if (selectedSubject !== 'all' && qp.subjectId && qp.subjectId !== selectedSubject) return false;
+    if (selectedExamType !== 'All Types' && qp.examType && qp.examType !== selectedExamType) return false;
+    if (selectedYear !== 'all' && qp.year && qp.year !== parseInt(selectedYear, 10)) return false;
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      if (!qp.name.toLowerCase().includes(q) && !qp.subjectName?.toLowerCase().includes(q)) return false;
+      const matchName = qp.name && qp.name.toLowerCase().includes(q);
+      const matchSubject = qp.subjectName && qp.subjectName.toLowerCase().includes(q);
+      const matchDesc = qp.description && qp.description.toLowerCase().includes(q);
+      if (!matchName && !matchSubject && !matchDesc) return false;
     }
     return true;
   });
@@ -95,6 +98,7 @@ export const QuestionPapersPage = () => {
         <button
           onClick={() => openUploadModal({
             semesterId: selectedSemester !== 'all' ? selectedSemester : 'S1',
+            subjectId: selectedSubject !== 'all' ? selectedSubject : '',
             category: 'Question Paper'
           })}
           className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-emerald-950 transition-all hover:scale-105"
