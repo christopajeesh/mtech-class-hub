@@ -28,7 +28,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: { fileSize: 50 * 1024 * 1024 } // 50MB limit
+  limits: { fileSize: 100 * 1024 * 1024 } // 100MB limit per file
 });
 
 const router = express.Router();
@@ -327,7 +327,7 @@ router.get('/files', (req, res) => {
   res.json(files);
 });
 
-router.post('/files/upload', upload.single('file'), (req, res) => {
+router.post('/files/upload', upload.any(), (req, res) => {
   try {
     const store = getStore();
     const {
@@ -339,26 +339,8 @@ router.post('/files/upload', upload.single('file'), (req, res) => {
       uploadedBy,
       examType,
       year,
-      notesText // Optional pasted text content for quick notes creation
+      notesText // Optional text note
     } = req.body;
-
-    let originalName = 'Academic Note.pdf';
-    let fileType = 'application/pdf';
-    let size = 1024 * 50;
-    let sizeFormatted = '50 KB';
-    let filePath = '';
-
-    if (req.file) {
-      originalName = req.file.originalname;
-      fileType = req.file.mimetype;
-      size = req.file.size;
-      sizeFormatted = size > 1024 * 1024 
-        ? `${(size / (1024 * 1024)).toFixed(1)} MB` 
-        : `${Math.round(size / 1024)} KB`;
-      filePath = `/uploads/${req.file.filename}`;
-    } else if (req.body.name) {
-      originalName = req.body.name;
-    }
 
     const subject = (store.subjects || []).find(s => s.id === subjectId);
     const subjectName = subject ? subject.name : 'Computer Science';
@@ -382,32 +364,77 @@ router.post('/files/upload', upload.single('file'), (req, res) => {
       }
     }
 
-    const newFile = {
-      id: `file-${Date.now()}`,
-      name: originalName,
-      originalName,
-      fileType,
-      size,
-      sizeFormatted,
-      fileUrl: filePath,
-      semesterId: semesterId || store.settings.activeSemester || 'S1',
-      subjectId: subjectId || '',
-      subjectName,
-      moduleNumber: modNum,
-      moduleTag: modTag,
-      category: category || 'Notes',
-      uploadedBy: uploadedBy || store.settings.members[0] || 'Christo',
-      uploadedAt: new Date().toISOString(),
-      description: description || '',
-      examType: examType || null,
-      year: year ? parseInt(year, 10) : null,
-      extractedContent: notesText || description || ''
-    };
+    const createdFiles = [];
 
-    store.files.push(newFile);
+    if (req.files && req.files.length > 0) {
+      req.files.forEach((f, index) => {
+        const originalName = f.originalname;
+        const fileType = f.mimetype || 'application/octet-stream';
+        const size = f.size;
+        const sizeFormatted = size > 1024 * 1024 
+          ? `${(size / (1024 * 1024)).toFixed(1)} MB` 
+          : `${Math.round(size / 1024)} KB`;
+        const filePath = `/uploads/${f.filename}`;
+
+        const newFile = {
+          id: `file-${Date.now()}-${index}-${Math.round(Math.random() * 1e4)}`,
+          name: originalName,
+          originalName,
+          fileType,
+          size,
+          sizeFormatted,
+          fileUrl: filePath,
+          semesterId: semesterId || store.settings.activeSemester || 'S1',
+          subjectId: subjectId || '',
+          subjectName,
+          moduleNumber: modNum,
+          moduleTag: modTag,
+          category: category || 'Notes',
+          uploadedBy: uploadedBy || store.settings.members[0] || 'Christo',
+          uploadedAt: new Date().toISOString(),
+          description: description || '',
+          examType: examType || null,
+          year: year ? parseInt(year, 10) : null,
+          extractedContent: notesText || description || ''
+        };
+
+        store.files.push(newFile);
+        createdFiles.push(newFile);
+      });
+    } else if (req.body.name) {
+      const newFile = {
+        id: `file-${Date.now()}`,
+        name: req.body.name,
+        originalName: req.body.name,
+        fileType: 'text/plain',
+        size: 1024,
+        sizeFormatted: '1 KB',
+        fileUrl: '',
+        semesterId: semesterId || store.settings.activeSemester || 'S1',
+        subjectId: subjectId || '',
+        subjectName,
+        moduleNumber: modNum,
+        moduleTag: modTag,
+        category: category || 'Notes',
+        uploadedBy: uploadedBy || store.settings.members[0] || 'Christo',
+        uploadedAt: new Date().toISOString(),
+        description: description || '',
+        examType: examType || null,
+        year: year ? parseInt(year, 10) : null,
+        extractedContent: notesText || description || ''
+      };
+      store.files.push(newFile);
+      createdFiles.push(newFile);
+    }
+
     saveStore(store);
 
-    res.status(201).json({ success: true, file: newFile });
+    res.status(201).json({ 
+      success: true, 
+      file: createdFiles[0] || null,
+      files: createdFiles,
+      count: createdFiles.length
+    });
   } catch (err) {
     console.error('File upload error:', err);
     res.status(500).json({ success: false, message: 'Upload failed. Please try again.' });

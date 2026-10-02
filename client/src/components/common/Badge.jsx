@@ -39,9 +39,9 @@ export const CategoryBadge = ({ category }) => {
     color = 'bg-teal-950/80 text-teal-300 border-teal-700/70 shadow-sm';
   } else if (cat.includes('notes')) {
     color = 'bg-indigo-950/70 text-indigo-300 border-indigo-800/60';
-  } else if (cat.includes('ppt')) {
+  } else if (cat.includes('ppt') || cat.includes('presentation')) {
     color = 'bg-purple-950/70 text-purple-300 border-purple-800/60';
-  } else if (cat.includes('question paper')) {
+  } else if (cat.includes('question') || cat.includes('bank') || cat.includes('paper')) {
     color = 'bg-emerald-950/70 text-emerald-300 border-emerald-800/60';
   } else if (cat.includes('important')) {
     color = 'bg-amber-950/70 text-amber-300 border-amber-800/60';
@@ -51,9 +51,11 @@ export const CategoryBadge = ({ category }) => {
     color = 'bg-rose-950/70 text-rose-300 border-rose-800/60';
   }
 
+  const displayText = category === 'Question Paper' ? 'Question Bank' : category;
+
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold tracking-wider uppercase border ${color}`}>
-      {category}
+      {displayText}
     </span>
   );
 };

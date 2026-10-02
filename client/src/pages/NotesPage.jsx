@@ -215,7 +215,7 @@ export const NotesPage = () => {
 
           <div className="flex items-center gap-2 overflow-x-auto justify-start sm:justify-end">
             <span className="text-xs font-semibold text-slate-400 flex-shrink-0">Category:</span>
-            {['all', 'Notes', 'PPT', 'Reference', 'Important Questions', 'Other'].map((cat) => (
+            {['all', 'Notes', 'Question Paper', 'PPT', 'Reference', 'Important Questions', 'Other'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -225,7 +225,7 @@ export const NotesPage = () => {
                     : 'bg-slate-900 text-slate-400 hover:text-white'
                 }`}
               >
-                {cat === 'all' ? 'All Types' : cat}
+                {cat === 'all' ? 'All Types' : cat === 'Question Paper' ? 'Question Bank' : cat}
               </button>
             ))}
           </div>
