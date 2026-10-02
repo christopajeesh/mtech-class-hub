@@ -1,0 +1,118 @@
+================================================================================
+SAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)
+M.Tech. DEGREE PROGRAMME - SYLLABUS 2026
+================================================================================
+
+COURSE DETAILS:
+---------------
+Course Code:          26SE101
+Course Name:          Distributed Systems and Advanced Computing
+Slot:                 Slot A
+Course Delivery Mode: TiC
+Credits:              4 (L-T-P-H: 4-0-0-0)
+Pre-requisite:        Nil
+Faculty in Charge:    Er. Lini Ickappan
+Academic Year:        2026–2027 (Semester 1)
+
+COURSE OBJECTIVES:
+------------------
+1. To understand the fundamentals, architectures, and design goals of distributed systems.
+2. To analyze grid computing infrastructure, resource management, and scheduling techniques.
+3. To apply cluster computing concepts for parallel processing and high-performance systems.
+4. To evaluate cloud computing models, services, and infrastructure challenges.
+5. To develop skills in deploying and managing cloud platforms such as OpenStack.
+
+COURSE OUTCOMES (COs):
+----------------------
+CO1: Explain distributed system architectures, consistency models, and replication techniques.
+CO2: Analyze grid computing components, resource management, and scheduling mechanisms.
+CO3: Apply cluster computing techniques for parallel and fault-tolerant systems.
+CO4: Evaluate cloud computing models, services, and associated risks.
+CO5: Implement and manage cloud platforms such as OpenStack for real-world applications.
+
+COURSE CONTENTS & MODULE STRUCTURE:
+-----------------------------------
+
+Zeroth Module: General Introduction to the Course (1 Hr)
+- Course introduction with a thorough briefing of Course Objectives and Course Outcomes
+- Overview of the POs that are mapped to the course
+
+Module I: Introduction to Distributed Systems (10 Hrs)
+- Distributed versus decentralized systems
+- Design goals of distributed systems
+- Classifications of distributed systems
+- Architectural styles
+- Consistency and replication: Data-centric consistency models, Client-centric consistency models
+- Replica management
+
+Module II: Grid Computing (10 Hrs)
+- Introduction and characteristics of grid computing
+- Grid computing infrastructures; Virtual organizations and the grid
+- Grid architecture; Implementing grid architecture
+- CPU scavenging and virtual supercomputers
+- Data-intensive grid service models; The grid community
+- Open Grid Services Architecture (OGSA)
+- Grid resource management and brokering
+- Resource management and job scheduling
+- Grid resource monitoring with CGSP
+- Service accounting and economy model
+- Resource brokering with Gridbus
+
+Module III: Cluster Computing (10 Hrs)
+- Introduction and clustering for massive parallelism
+- Design objectives of computer clusters
+- Fundamental cluster design issues
+- Computer clusters and MPP architectures
+- Cluster organization and resource sharing
+- Node architectures and MPP packaging
+- Cluster system interconnects; GPU clusters for massive parallelism
+- Design principles of computer clusters
+- Single-system image features; High availability through redundancy
+- Fault-tolerant cluster configurations
+- Cluster job and resource management
+
+Module IV: Cloud Computing (9 Hrs)
+- Introduction to cloud computing; Roots of cloud computing
+- Layers and types of clouds
+- Infrastructure as a Service (IaaS)
+- Platform as a Service (PaaS)
+- Software as a Service (SaaS)
+- Deployment models (Public, Private, Hybrid, Community)
+- Desired features of a cloud
+- Cloud infrastructure management
+- Challenges and risks in the cloud computing model
+
+Module V: Cloud Computing Platforms (9 Hrs)
+- OpenStack: Architecture and Components
+- OpenStack deployment with DevStack
+- Creation of flavours
+- Concepts of Neutron networking
+- Images management
+- User management with Keystone
+- Concepts of object store (Swift)
+- OpenStack compute (Nova)
+
+TEXT BOOKS:
+-----------
+1. Maarten van Steen and Andrew S. Tanenbaum, Distributed Systems, 4th Edition, Pearson Education, 2023. ISBN: 978-90-815406-3-6.
+2. Kai Hwang, Jack Dongarra, Geoffrey C. Fox, Distributed and Cloud Computing: From Parallel Processing to the Internet of Things, 1st Edition, Elsevier, 2013. ISBN: 978-0128002049.
+3. Kevin Jackson, Cody Bunch, OpenStack Cloud Computing Cookbook, 2nd Edition, Packt Publishing, 2016. ISBN: 978-1782167587.
+
+REFERENCE BOOKS:
+----------------
+1. Tanenbaum, A.S., and van Steen, M., Distributed Systems: Principles and Paradigms, 2nd Edition, Prentice Hall, 2007.
+2. Dan C. Marinescu, Cloud Computing: Theory and Practice, Elsevier, 2013.
+3. Thomas Erl, Ricardo Puttini, Zaigham Mahmood, Cloud Computing: Concepts, Technology & Architecture, 2nd Edition, Pearson Publications, 2013.
+4. Michael Solberg, OpenStack for Architects, 2nd Edition, Packt Publishing, 2018.
+
+MODES OF EVALUATION:
+--------------------
+- Continuous Internal Evaluation (CIE): 40 Marks
+  * Internal Test I:  12.5 Marks
+  * Internal Test II: 12.5 Marks
+  * Taskworks:        15 Marks (Assignment: 50%, Seminar/Quiz: 50%)
+- End Semester Examination (ESE): 60 Marks
+  * Part A: 15 marks (5 questions, 1 from each module, 3 marks each)
+  * Part B: 45 marks (10 questions, 2 from each module, answer 1 from each, 9 marks each)
+- Total: 100 Marks
+================================================================================

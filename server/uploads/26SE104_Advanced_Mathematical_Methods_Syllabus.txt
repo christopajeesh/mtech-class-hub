@@ -1,0 +1,102 @@
+================================================================================
+SAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)
+M.Tech. DEGREE PROGRAMME - SYLLABUS 2026
+================================================================================
+
+COURSE DETAILS:
+---------------
+Course Code:          26SE104
+Course Name:          Advanced Mathematical Methods for Computing Systems
+Slot:                 Slot D & Slot D(L) Lab
+Course Delivery Mode: TiC & PiL (Theory in Classroom & Practice in Lab)
+Credits:              4 (L-T-P-H: 3-0-2-0)
+Pre-requisite:        Nil
+Faculty in Charge:    Mr. Prince Achankunju
+Academic Year:        2026–2027 (Semester 1)
+
+COURSE OBJECTIVES:
+------------------
+1. To develop a strong foundation in advanced linear algebra techniques for analysing computing systems.
+2. To understand and apply optimization methods to solve engineering and machine learning problems.
+3. To gain knowledge of probability theory and statistical methods for modelling uncertainty in real-world applications.
+4. To integrate mathematical concepts with computational tools to solve complex problems in data science and engineering.
+
+COURSE OUTCOMES (COs):
+----------------------
+CO1: Apply advanced linear algebra concepts such as eigenvalues, orthogonality, and matrix decompositions in computing applications.
+CO2: Formulate and solve optimization problems using appropriate analytical and numerical techniques.
+CO3: Model and analyse random phenomena using probability distributions and statistical inference methods.
+CO4: Implement mathematical methods using computational tools to solve real-world engineering and data-driven problems.
+
+COURSE CONTENTS & MODULE STRUCTURE:
+-----------------------------------
+
+Zeroth Module: General Introduction to the Course (1 Hr)
+- Course introduction with a thorough briefing of Course Objectives and Course Outcomes
+- Overview of the POs that are mapped to the course
+
+Module I: Advanced Linear Algebra for Computing (12 Hrs)
+- Vector spaces, Subspaces, Basis, Dimension
+- Linear transformations and matrix representations
+- Eigenvalues and Eigenvectors; Diagonalization
+- Singular Value Decomposition (SVD)
+- LU decomposition and QR decomposition
+- Iterative methods: Jacobi and Gauss-Seidel
+- Least squares problems and pseudo-inverses
+
+Module II: Optimization Techniques (12 Hrs)
+- Formulation of optimization problems
+- Convex sets and convex functions
+- Unconstrained optimization: Gradient descent and variants, Newton's method
+- Constrained optimization: Method of Lagrange multipliers
+- Karush-Kuhn-Tucker (KKT) conditions
+
+Module III: Probability Theory and Statistics (12 Hrs)
+- Random variables (discrete and continuous)
+- Probability distributions: Normal, Binomial, Poisson, Exponential
+- Expectation, Variance, Moments
+- Joint distributions and statistical independence
+- Sampling methods
+- Parameter estimation: Maximum Likelihood Estimation (MLE), Maximum A Posteriori (MAP)
+- Hypothesis testing and Confidence intervals
+- Regression analysis (linear regression)
+
+LABORATORY EXERCISES (Minimum 8 exercises in Python):
+-----------------------------------------------------
+1. Introducing Python as a tool for computational mathematics
+2. Introducing Python libraries (NumPy, SciPy, Matplotlib) for solving linear systems
+3. Performing vector and matrix operations using Python and visualizing results
+4. Solving systems of linear equations using matrix methods and visualizing solutions
+5. Computing eigenvalues, eigenvectors, and Singular Value Decomposition (SVD) and visualizing applications
+6. Implementing the gradient descent algorithm to solve optimization problems and visualize convergence
+7. Solving optimization problems using Newton's method and visualizing results
+8. Solving constrained optimization problems using Lagrange multipliers and visualizing solutions
+9. Simulating random variables and probability distributions and visualizing outcomes
+10. Performing hypothesis testing and regression analysis using Python and visualizing results
+
+TEXT BOOKS:
+-----------
+1. G. Strang, Linear Algebra and Its Applications, 4th Edition, Cengage Learning, 2006. ISBN: 978-0030105678.
+2. S. Boyd and L. Vandenberghe, Convex Optimization, 1st Edition, Cambridge University Press, 2004. ISBN: 978-0521833783.
+3. S. Ross, A First Course in Probability, 9th Edition, Pearson Education, 2014. ISBN: 978-0321794772.
+
+REFERENCE BOOKS:
+----------------
+1. D. C. Lay, S. R. Lay, and J. J. McDonald, Linear Algebra and Its Applications, 5th Edition, Pearson Education, 2015.
+2. K. Hoffman and R. Kunze, Linear Algebra, 2nd Edition, Prentice Hall of India, 2006.
+3. S. S. Rao, Engineering Optimization: Theory and Practice, 4th Edition, Wiley, 2009.
+4. D. P. Bertsekas, Nonlinear Programming, 2nd Edition, Athena Scientific, 1999.
+5. W. Feller, An Introduction to Probability Theory and Its Applications, Vol. 1, 3rd Edition, Wiley, 1968.
+
+MODES OF EVALUATION:
+--------------------
+- Continuous Internal Evaluation (CIE): 50 Marks
+  * Internal Test I:      7.5 Marks
+  * Internal Test II:     7.5 Marks
+  * Taskworks:           10 Marks (Assignments / MCQ / Quiz)
+  * Embedded Lab:        25 Marks
+- End Semester Examination (ESE): 50 Marks
+  * Part A: 14 Marks (7 questions: 2 each from modules 1 & 2, 3 from module 3, 2 marks each)
+  * Part B: 36 Marks (2 questions from each module, answer 1 from each, 12 marks each)
+- Total: 100 Marks
+================================================================================

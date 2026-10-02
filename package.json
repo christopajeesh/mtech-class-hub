@@ -1,0 +1,12 @@
+{
+  "name": "mtech-class-hub",
+  "version": "1.0.0",
+  "description": "Private academic collaboration workspace for 6 Saintgits M.Tech CS scholars",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
+    "server": "npm --prefix server run start",
+    "client": "npm --prefix client run dev",
+    "dev": "node start-all.js"
+  }
+}

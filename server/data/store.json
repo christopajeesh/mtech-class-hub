@@ -1,0 +1,645 @@
+{
+  "settings": {
+    "className": "MTech Class Hub — CS 2026-2028",
+    "institution": "Saintgits College of Engineering, Kottayam, Kerala",
+    "accessCode": "2628",
+    "members": [
+      "Christo",
+      "Nikitha",
+      "Mintu",
+      "Kishore",
+      "Aneena",
+      "Alena"
+    ],
+    "activeSemester": "S1",
+    "academicYear": "2026–2027",
+    "theme": "dark",
+    "aiProvider": "integrated-rag",
+    "geminiApiKey": ""
+  },
+  "semesters": [
+    {
+      "id": "S1",
+      "name": "Semester 1",
+      "code": "S1",
+      "academicYear": "2026–2027",
+      "isActive": true,
+      "isArchived": false,
+      "description": "First semester core computer science and mathematical foundations"
+    },
+    {
+      "id": "S2",
+      "name": "Semester 2",
+      "code": "S2",
+      "academicYear": "2026–2027",
+      "isActive": false,
+      "isArchived": false,
+      "description": "Advanced topics, machine learning, and systems specialization"
+    },
+    {
+      "id": "S3",
+      "name": "Semester 3",
+      "code": "S3",
+      "academicYear": "2027–2028",
+      "isActive": false,
+      "isArchived": false,
+      "description": "Electives, dissertation phase 1, and industrial project"
+    },
+    {
+      "id": "S4",
+      "name": "Semester 4",
+      "code": "S4",
+      "academicYear": "2027–2028",
+      "isActive": false,
+      "isArchived": false,
+      "description": "Dissertation Phase 2 and thesis defense"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "subj-ds",
+      "semesterId": "S1",
+      "name": "Distributed Systems and Advanced Computing",
+      "code": "26SE101",
+      "slot": "A",
+      "faculty": "Er. Lini Ickappan",
+      "moduleCount": 5,
+      "order": 1,
+      "color": "purple",
+      "periodsPerWeek": 4,
+      "description": "Slot A • Architectures, consensus, synchronization, grid computing, and fault tolerance."
+    },
+    {
+      "id": "subj-adsa",
+      "semesterId": "S1",
+      "name": "Advanced Data Structures & Algorithm Design",
+      "code": "26SE102",
+      "slot": "B",
+      "faculty": "Er. Sheeba Babu",
+      "moduleCount": 4,
+      "order": 2,
+      "color": "blue",
+      "periodsPerWeek": 3,
+      "description": "Slot B • Amortized analysis, randomized algorithms, advanced tree structures, and graph algorithms."
+    },
+    {
+      "id": "subj-dbms",
+      "semesterId": "S1",
+      "name": "Database Systems and Distributed Data Management",
+      "code": "26SE103",
+      "slot": "C",
+      "faculty": "Er. Remya Rachel Joseph",
+      "moduleCount": 3,
+      "order": 3,
+      "color": "emerald",
+      "periodsPerWeek": 5,
+      "description": "Slot C & C(L) Lab • Distributed databases, concurrency control, query optimization, and transaction recovery."
+    },
+    {
+      "id": "subj-mfc",
+      "semesterId": "S1",
+      "name": "Advanced Mathematical Methods for Computing Systems",
+      "code": "26SE104",
+      "slot": "D",
+      "faculty": "Mr. Prince Achankunju",
+      "moduleCount": 3,
+      "order": 4,
+      "color": "cyan",
+      "periodsPerWeek": 5,
+      "description": "Slot D & D(L) Lab • Linear algebra, matrix factorizations, probability spaces, Markov chains, and graph theory."
+    },
+    {
+      "id": "subj-atc",
+      "semesterId": "S1",
+      "name": "Automata Theory and Computability",
+      "code": "26SE105 - J",
+      "slot": "E",
+      "faculty": "Er. Justin Mathew",
+      "moduleCount": 5,
+      "order": 5,
+      "color": "amber",
+      "periodsPerWeek": 3,
+      "description": "Slot E • Regular languages, context-free grammars, Turing machines, decidability, and complexity classes."
+    },
+    {
+      "id": "subj-sensor",
+      "semesterId": "S1",
+      "name": "Advanced Sensors and Instrumentation",
+      "code": "26GN106 - M",
+      "slot": "F",
+      "faculty": "Dr. Sethu Merin George",
+      "moduleCount": 4,
+      "order": 6,
+      "color": "pink",
+      "periodsPerWeek": 3,
+      "description": "Slot F (Electives) • 26GN106 - M: Advanced Sensors and Instrumentation (Dr. Sethu Merin George) | 26GN106 - P: Nanotechnology and Nanoengineering (Dr. David K Daniel)."
+    },
+    {
+      "id": "subj-di",
+      "semesterId": "S1",
+      "name": "Dissertation Ideation",
+      "code": "DI",
+      "slot": "DI",
+      "faculty": "Dr. Arun",
+      "moduleCount": 4,
+      "order": 7,
+      "color": "indigo",
+      "periodsPerWeek": 6,
+      "description": "Slot DI • Research problem identification, literature review, IEEE/ACM analysis, and thesis proposal with Dr. Arun."
+    }
+  ],
+  "files": [
+    {
+      "id": "file-syl-26se101",
+      "name": "26SE101 - Distributed Systems and Advanced Computing (Syllabus 2026).pdf",
+      "originalName": "26SE101_Distributed_Systems_Syllabus.pdf",
+      "subjectId": "subj-ds",
+      "subjectName": "Distributed Systems and Advanced Computing",
+      "semesterId": "S1",
+      "moduleNo": null,
+      "category": "Syllabus",
+      "fileType": "application/pdf",
+      "fileUrl": "/uploads/26SE101_Distributed_Systems_Syllabus.pdf",
+      "fileSize": 295066,
+      "uploadedBy": "Academic Council (Saintgits)",
+      "uploadedAt": "2026-08-03T10:00:00.000Z",
+      "description": "Official M.Tech 2026 Syllabus for 26SE101: Distributed Systems and Advanced Computing (Modules I - V, Textbooks & ESE pattern).",
+      "downloadCount": 0,
+      "extractedContent": "================================================================================\nSAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)\nM.Tech. DEGREE PROGRAMME - SYLLABUS 2026\n================================================================================\n\nCOURSE DETAILS:\n---------------\nCourse Code:          26SE101\nCourse Name:          Distributed Systems and Advanced Computing\nSlot:                 Slot A\nCourse Delivery Mode: TiC\nCredits:              4 (L-T-P-H: 4-0-0-0)\nPre-requisite:        Nil\nFaculty in Charge:    Er. Lini Ickappan\nAcademic Year:        2026–2027 (Semester 1)\n\nCOURSE OBJECTIVES:\n------------------\n1. To understand the fundamentals, architectures, and design goals of distributed systems.\n2. To analyze grid computing infrastructure, resource management, and scheduling techniques.\n3. To apply cluster computing concepts for parallel processing and high-performance systems.\n4. To evaluate cloud computing models, services, and infrastructure challenges.\n5. To develop skills in deploying and managing cloud platforms such as OpenStack.\n\nCOURSE OUTCOMES (COs):\n----------------------\nCO1: Explain distributed system architectures, consistency models, and replication techniques.\nCO2: Analyze grid computing components, resource management, and scheduling mechanisms.\nCO3: Apply cluster computing techniques for parallel and fault-tolerant systems.\nCO4: Evaluate cloud computing models, services, and associated risks.\nCO5: Implement and manage cloud platforms such as OpenStack for real-world applications.\n\nCOURSE CONTENTS & MODULE STRUCTURE:\n-----------------------------------\n\nZeroth Module: General Introduction to the Course (1 Hr)\n- Course introduction with a thorough briefing of Course Objectives and Course Outcomes\n- Overview of the POs that are mapped to the course\n\nModule I: Introduction to Distributed Systems (10 Hrs)\n- Distributed versus decentralized systems\n- Design goals of distributed systems\n- Classifications of distributed systems\n- Architectural styles\n- Consistency and replication: Data-centric consistency models, Client-centric consistency models\n- Replica management\n\nModule II: Grid Computing (10 Hrs)\n- Introduction and characteristics of grid computing\n- Grid computing infrastructures; Virtual organizations and the grid\n- Grid architecture; Implementing grid architecture\n- CPU scavenging and virtual supercomputers\n- Data-intensive grid service models; The grid community\n- Open Grid Services Architecture (OGSA)\n- Grid resource management and brokering\n- Resource management and job scheduling\n- Grid resource monitoring with CGSP\n- Service accounting and economy model\n- Resource brokering with Gridbus\n\nModule III: Cluster Computing (10 Hrs)\n- Introduction and clustering for massive parallelism\n- Design objectives of computer clusters\n- Fundamental cluster design issues\n- Computer clusters and MPP architectures\n- Cluster organization and resource sharing\n- Node architectures and MPP packaging\n- Cluster system interconnects; GPU clusters for massive parallelism\n- Design principles of computer clusters\n- Single-system image features; High availability through redundancy\n- Fault-tolerant cluster configurations\n- Cluster job and resource management\n\nModule IV: Cloud Computing (9 Hrs)\n- Introduction to cloud computing; Roots of cloud computing\n- Layers and types of clouds\n- Infrastructure as a Service (IaaS)\n- Platform as a Service (PaaS)\n- Software as a Service (SaaS)\n- Deployment models (Public, Private, Hybrid, Community)\n- Desired features of a cloud\n- Cloud infrastructure management\n- Challenges and risks in the cloud computing model\n\nModule V: Cloud Computing Platforms (9 Hrs)\n- OpenStack: Architecture and Components\n- OpenStack deployment with DevStack\n- Creation of flavours\n- Concepts of Neutron networking\n- Images management\n- User management with Keystone\n- Concepts of object store (Swift)\n- OpenStack compute (Nova)\n\nTEXT BOOKS:\n-----------\n1. Maarten van Steen and Andrew S. Tanenbaum, Distributed Systems, 4th Edition, Pearson Education, 2023. ISBN: 978-90-815406-3-6.\n2. Kai Hwang, Jack Dongarra, Geoffrey C. Fox, Distributed and Cloud Computing: From Parallel Processing to the Internet of Things, 1st Edition, Elsevier, 2013. ISBN: 978-0128002049.\n3. Kevin Jackson, Cody Bunch, OpenStack Cloud Computing Cookbook, 2nd Edition, Packt Publishing, 2016. ISBN: 978-1782167587.\n\nREFERENCE BOOKS:\n----------------\n1. Tanenbaum, A.S., and van Steen, M., Distributed Systems: Principles and Paradigms, 2nd Edition, Prentice Hall, 2007.\n2. Dan C. Marinescu, Cloud Computing: Theory and Practice, Elsevier, 2013.\n3. Thomas Erl, Ricardo Puttini, Zaigham Mahmood, Cloud Computing: Concepts, Technology & Architecture, 2nd Edition, Pearson Publications, 2013.\n4. Michael Solberg, OpenStack for Architects, 2nd Edition, Packt Publishing, 2018.\n\nMODES OF EVALUATION:\n--------------------\n- Continuous Internal Evaluation (CIE): 40 Marks\n  * Internal Test I:  12.5 Marks\n  * Internal Test II: 12.5 Marks\n  * Taskworks:        15 Marks (Assignment: 50%, Seminar/Quiz: 50%)\n- End Semester Examination (ESE): 60 Marks\n  * Part A: 15 marks (5 questions, 1 from each module, 3 marks each)\n  * Part B: 45 marks (10 questions, 2 from each module, answer 1 from each, 9 marks each)\n- Total: 100 Marks\n================================================================================\n"
+    },
+    {
+      "id": "file-syl-26se102",
+      "name": "26SE102 - Advanced Data Structures & Algorithm Design (Syllabus 2026).pdf",
+      "originalName": "26SE102_Data_Structures_Algorithm_Design_Syllabus.pdf",
+      "subjectId": "subj-adsa",
+      "subjectName": "Advanced Data Structures & Algorithm Design",
+      "semesterId": "S1",
+      "moduleNo": null,
+      "category": "Syllabus",
+      "fileType": "application/pdf",
+      "fileUrl": "/uploads/26SE102_Data_Structures_Algorithm_Design_Syllabus.pdf",
+      "fileSize": 478909,
+      "uploadedBy": "Academic Council (Saintgits)",
+      "uploadedAt": "2026-08-03T10:00:00.000Z",
+      "description": "Official M.Tech 2026 Syllabus for 26SE102: Advanced Data Structures & Algorithm Design (Modules I - IV, Reference Books & Evaluation Scheme).",
+      "downloadCount": 0,
+      "extractedContent": "================================================================================\nSAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)\nM.Tech. DEGREE PROGRAMME - SYLLABUS 2026\n================================================================================\n\nCOURSE DETAILS:\n---------------\nCourse Code:          26SE102\nCourse Name:          Advanced Data Structures & Algorithm Design\nSlot:                 Slot B\nCourse Delivery Mode: TiC/MOOC\nCredits:              3 (L-T-P-H: 3-0-0-0)\nPre-requisite:        Nil\nFaculty in Charge:    Er. Sheeba Babu\nAcademic Year:        2026–2027 (Semester 1)\n\nCOURSE OBJECTIVES:\n------------------\n1. To introduce fundamental concepts of algorithm design, complexity analysis, and asymptotic behaviour.\n2. To develop understanding of core data structures such as stacks, queues, trees, and their applications.\n3. To enable the application of advanced data structures and algorithm design paradigms like Divide and Conquer and Greedy methods.\n4. To analyse and evaluate graph algorithms, optimization techniques, and advanced sorting and selection methods.\n\nCOURSE OUTCOMES (COs):\n----------------------\nCO1: Explain algorithmic concepts, complexity measures, and asymptotic analysis techniques.\nCO2: Apply fundamental data structures such as stacks, queues, and binary search trees to solve problems.\nCO3: Design algorithms using advanced paradigms like Divide and Conquer and implement balanced trees and heaps.\nCO4: Analyse graph algorithms and advanced techniques for solving optimization and real-world computational problems.\n\nCOURSE CONTENTS & MODULE STRUCTURE:\n-----------------------------------\n\nZeroth Module: General Introduction to the Course (1 Hr)\n- Course introduction with a thorough briefing of Course Objectives and Course Outcomes\n- Overview of the POs that are mapped to the course\n\nModule I: Introduction to Algorithm Design and Analysis (9 Hrs)\n- Introduction to algorithmic thinking and characteristics of efficient algorithms\n- Time and Space Complexity analysis; Asymptotic notations\n- Linear-time algorithms; Maximum subarray problem\n- Mathematical foundations of algorithm analysis\n- Techniques for writing and proving correctness of algorithms\n- Local minima problems in 1D and 2D arrays\n\nModule II: Fundamental Data Structures (9 Hrs)\n- Abstract data types (ADT)\n- Range minimum query (RMQ) in 1D arrays\n- Binary search trees (BST): Structure and properties, Height and balancing concepts\n- Stack and queue data structures\n- Expression evaluation using stacks\n- Grid-based distance problems\n\nModule III: Advanced Data Structures and Algorithmic Paradigms (9 Hrs)\n- Balanced trees: Red-black trees (Height properties, Insertion, Deletion operations)\n- Divide and conquer paradigm and applications: Half-majority problem, Efficient multiplication techniques\n- Inversion counting\n- Heap data structure and priority queues\n- Dynamic data structures\n\nModule IV: Graph Algorithms and Advanced Techniques (9 Hrs)\n- Graph representations and fundamentals\n- Traversal algorithms: Breadth first search (BFS), Depth first search (DFS) and DFS tree\n- Bipartite graphs; Articulation points and biconnected components\n- Disjoint sets (Union-Find) and set operations\n- Dijkstra's shortest path algorithm\n- Selection problems; Non-comparison sorting\n- Range queries and multi-increment techniques\n\nTEXT BOOKS:\n-----------\n1. T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, Introduction to Algorithms, 4th edition, MIT Press, 2022. ISBN: 978-0262046305.\n2. M. T. Goodrich, R. Tamassia, and M. H. Goldwasser, Data Structures and Algorithms in Java, 6th edition, Wiley, 2014. ISBN: 978-1118771334.\n3. J. Kleinberg and Éva Tardos, Algorithm Design, 2nd edition, Pearson Education, 2022. ISBN: 978-0132131087.\n\nREFERENCE BOOKS:\n----------------\n1. R. Sedgewick and K. Wayne, Algorithms, 4th edition, Addison-Wesley, 2011.\n2. S. Dasgupta, C. Papadimitriou, and U. Vazirani, Algorithms, 1st edition, McGraw-Hill, 2006.\n3. A. V. Aho, J. E. Hopcroft, and J. D. Ullman, Data Structures and Algorithms, Pearson, 1983.\n4. S. S. Skiena, The Algorithm Design Manual, 3rd edition, Springer, 2020.\n5. S. Baase and A. Van Gelder, Computer Algorithms: Introduction to Design and Analysis, 3rd edition, Pearson, 2000.\n\nMODES OF EVALUATION:\n--------------------\n- Continuous Internal Evaluation (CIE): 40 Marks\n  * Internal Test I:  12.5 Marks\n  * Internal Test II: 12.5 Marks\n  * Taskworks:        15 Marks (Assignment: 50%, Seminar: 50%)\n- End Semester Examination (ESE): 60 Marks\n  * Part A: 24 marks (8 questions, 2 from each module, 3 marks each)\n  * Part B: 36 marks (2 questions from each module, answer 1 from each, 9 marks each)\n- Total: 100 Marks\n================================================================================\n"
+    },
+    {
+      "id": "file-syl-26se103",
+      "name": "26SE103 - Database Systems and Distributed Data Management (Syllabus 2026).pdf",
+      "originalName": "26SE103_Database_Systems_Distributed_Data_Syllabus.pdf",
+      "subjectId": "subj-dbms",
+      "subjectName": "Database Systems and Distributed Data Management",
+      "semesterId": "S1",
+      "moduleNo": null,
+      "category": "Syllabus",
+      "fileType": "application/pdf",
+      "fileUrl": "/uploads/26SE103_Database_Systems_Distributed_Data_Syllabus.pdf",
+      "fileSize": 1072908,
+      "uploadedBy": "Academic Council (Saintgits)",
+      "uploadedAt": "2026-08-03T10:00:00.000Z",
+      "description": "Official M.Tech 2026 Syllabus for 26SE103: Database Systems and Distributed Data Management (Modules I - III, 10 Lab Exercises, Embedded Lab & CIE/ESE pattern).",
+      "downloadCount": 0,
+      "extractedContent": "================================================================================\nSAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)\nM.Tech. DEGREE PROGRAMME - SYLLABUS 2026\n================================================================================\n\nCOURSE DETAILS:\n---------------\nCourse Code:          26SE103\nCourse Name:          Database Systems and Distributed Data Management\nSlot:                 Slot C & Slot C(L) Lab\nCourse Delivery Mode: TiC & PiL (Theory in Classroom & Practice in Lab)\nCredits:              4 (L-T-P-H: 3-0-2-0)\nPre-requisite:        Nil\nFaculty in Charge:    Er. Remya Rachel Joseph\nAcademic Year:        2026–2027 (Semester 1)\n\nCOURSE OBJECTIVES:\n------------------\n1. To gain knowledge of core concepts, architectures, and challenges in distributed computing environments.\n2. To learn the principles of big data and understand how Hadoop processes and manages large-scale data.\n3. To study HDFS and MapReduce for efficient distributed storage and parallel data processing.\n4. To learn different types of NoSQL databases and their role in handling scalable, distributed data.\n5. To implement CRUD operations, optimize queries, and integrate NoSQL databases with applications.\n\nCOURSE OUTCOMES (COs):\n----------------------\nCO1: Understand and explain the principles, architectures, and challenges of distributed systems.\nCO2: Understand big data concepts and analyze the Hadoop ecosystem and its components.\nCO3: Apply HDFS and MapReduce techniques for distributed storage and data processing.\nCO4: Analyze NoSQL database models and compare them with traditional relational databases.\nCO5: Design and implement NoSQL database solutions with efficient querying and scalability.\n\nCOURSE CONTENTS & MODULE STRUCTURE:\n-----------------------------------\n\nZeroth Module: General Introduction to the Course (1 Hr)\n- Course introduction with a thorough briefing of Course Objectives and Course Outcomes\n- Overview of the POs that are mapped to the course\n\nModule I: Big Data and Hadoop Ecosystem (12 Hrs)\n- Introduction to distributed database\n- Communication in distributed systems (RPC, RMI, message passing)\n- Big data concepts and characteristics\n- Introduction to Hadoop ecosystem\n- Hadoop architecture and components: Hadoop cluster setup and configuration\n- Hadoop YARN architecture\n- Hadoop ecosystem tools\n- Limitations of traditional systems vs Hadoop\n\nModule II: HDFS and MapReduce Programming (10 Hrs)\n- Data storage and processing in Hadoop\n- Hadoop distributed file system (HDFS) architecture: HDFS components\n- Data replication and fault tolerance\n- Introduction to MapReduce paradigm\n- MapReduce workflow and components\n- Writing MapReduce programs (Java/Python)\n- Input and output formats; Combiner\n\nModule III: NoSQL Database Programming and Applications (14 Hrs)\n- Introduction to NoSQL databases; Need for NoSQL\n- Types of NoSQL databases: Key-value stores, Document stores, Column-family stores, Graph databases\n- Data modelling in NoSQL\n- Popular NoSQL databases: MongoDB, Cassandra\n- CRUD operations in NoSQL databases\n- Querying and indexing techniques\n- Schema design and optimization\n- Working with MongoDB (documents, collections, aggregation framework)\n- Programming with Cassandra (CQL basics)\n\nLABORATORY EXERCISES (Minimum 8 exercises):\n-------------------------------------------\n1. Sending message from client to server through RPC in Java\n2. Hadoop single-node and multi-node installation\n3. Familiarization of HDFS commands\n4. Demonstrating the usage of combiners and partitioners in Hadoop\n5. Understanding NoSQL concepts and installing MongoDB / Cassandra\n6. Performing Create, Read, Update, Delete operations (CRUD in MongoDB)\n7. Creating and querying tables in Apache Cassandra using CQL\n8. Performing MapReduce in MongoDB\n9. Developing a NoSQL Data Model for a specific application\n10. Implementing the NoSQL Application in a suitable model\n\nTEXT BOOKS:\n-----------\n1. G. Coulouris, J. Dollimore, T. Kindberg, and G. Blair, Distributed Systems: Concepts and Design, 5th Edition, Addison-Wesley, 2011. ISBN: 978-0132143011.\n2. T. White, Hadoop: The Definitive Guide, 4th edition, O'Reilly Media, 2015. ISBN: 978-1491901632.\n3. M. Fowler and P. Sadalage, NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence, Addison-Wesley, 2012. ISBN: 978-0321826626.\n\nREFERENCE BOOKS:\n----------------\n1. M. Kleppmann, Designing Data-Intensive Applications, 1st edition, O'Reilly Media, 2017. ISBN: 978-1449373320.\n2. J. Leskovec, A. Rajaraman, and J. D. Ullman, Mining of Massive Datasets, 2nd ed, Cambridge University Press, 2014.\n3. L. George, HBase: The Definitive Guide, O'Reilly Media, 2011.\n4. E. Hewitt and J. Carpenter, Cassandra: The Definitive Guide, 2nd Edition, O'Reilly Media, 2016.\n5. K. Chodorow, MongoDB: The Definitive Guide, 2nd Edition, O'Reilly Media, 2013.\n\nMODES OF EVALUATION:\n--------------------\n- Continuous Internal Evaluation (CIE): 50 Marks\n  * Internal Test I:      7.5 Marks\n  * Internal Test II:     7.5 Marks\n  * Taskworks:           10 Marks (Assignments / MCQ / Quiz)\n  * Embedded Lab:        25 Marks\n- End Semester Examination (ESE): 50 Marks\n  * Part A: 14 Marks (7 questions: 2 from modules 1 & 2, 3 from module 3, 2 marks each)\n  * Part B: 36 Marks (2 questions from each module, answer 1 from each, 12 marks each)\n- Total: 100 Marks\n================================================================================\n"
+    },
+    {
+      "id": "file-syl-26se104",
+      "name": "26SE104 - Advanced Mathematical Methods for Computing Systems (Syllabus 2026).pdf",
+      "originalName": "26SE104_Advanced_Mathematical_Methods_Syllabus.pdf",
+      "subjectId": "subj-mfc",
+      "subjectName": "Advanced Mathematical Methods for Computing Systems",
+      "semesterId": "S1",
+      "moduleNo": null,
+      "category": "Syllabus",
+      "fileType": "application/pdf",
+      "fileUrl": "/uploads/26SE104_Advanced_Mathematical_Methods_Syllabus.pdf",
+      "fileSize": 401050,
+      "uploadedBy": "Academic Council (Saintgits)",
+      "uploadedAt": "2026-08-03T10:00:00.000Z",
+      "description": "Official M.Tech 2026 Syllabus for 26SE104: Advanced Mathematical Methods for Computing Systems (Modules I - III, 10 Python Lab Exercises & CIE/ESE pattern).",
+      "downloadCount": 0,
+      "extractedContent": "================================================================================\nSAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)\nM.Tech. DEGREE PROGRAMME - SYLLABUS 2026\n================================================================================\n\nCOURSE DETAILS:\n---------------\nCourse Code:          26SE104\nCourse Name:          Advanced Mathematical Methods for Computing Systems\nSlot:                 Slot D & Slot D(L) Lab\nCourse Delivery Mode: TiC & PiL (Theory in Classroom & Practice in Lab)\nCredits:              4 (L-T-P-H: 3-0-2-0)\nPre-requisite:        Nil\nFaculty in Charge:    Mr. Prince Achankunju\nAcademic Year:        2026–2027 (Semester 1)\n\nCOURSE OBJECTIVES:\n------------------\n1. To develop a strong foundation in advanced linear algebra techniques for analysing computing systems.\n2. To understand and apply optimization methods to solve engineering and machine learning problems.\n3. To gain knowledge of probability theory and statistical methods for modelling uncertainty in real-world applications.\n4. To integrate mathematical concepts with computational tools to solve complex problems in data science and engineering.\n\nCOURSE OUTCOMES (COs):\n----------------------\nCO1: Apply advanced linear algebra concepts such as eigenvalues, orthogonality, and matrix decompositions in computing applications.\nCO2: Formulate and solve optimization problems using appropriate analytical and numerical techniques.\nCO3: Model and analyse random phenomena using probability distributions and statistical inference methods.\nCO4: Implement mathematical methods using computational tools to solve real-world engineering and data-driven problems.\n\nCOURSE CONTENTS & MODULE STRUCTURE:\n-----------------------------------\n\nZeroth Module: General Introduction to the Course (1 Hr)\n- Course introduction with a thorough briefing of Course Objectives and Course Outcomes\n- Overview of the POs that are mapped to the course\n\nModule I: Advanced Linear Algebra for Computing (12 Hrs)\n- Vector spaces, Subspaces, Basis, Dimension\n- Linear transformations and matrix representations\n- Eigenvalues and Eigenvectors; Diagonalization\n- Singular Value Decomposition (SVD)\n- LU decomposition and QR decomposition\n- Iterative methods: Jacobi and Gauss-Seidel\n- Least squares problems and pseudo-inverses\n\nModule II: Optimization Techniques (12 Hrs)\n- Formulation of optimization problems\n- Convex sets and convex functions\n- Unconstrained optimization: Gradient descent and variants, Newton's method\n- Constrained optimization: Method of Lagrange multipliers\n- Karush-Kuhn-Tucker (KKT) conditions\n\nModule III: Probability Theory and Statistics (12 Hrs)\n- Random variables (discrete and continuous)\n- Probability distributions: Normal, Binomial, Poisson, Exponential\n- Expectation, Variance, Moments\n- Joint distributions and statistical independence\n- Sampling methods\n- Parameter estimation: Maximum Likelihood Estimation (MLE), Maximum A Posteriori (MAP)\n- Hypothesis testing and Confidence intervals\n- Regression analysis (linear regression)\n\nLABORATORY EXERCISES (Minimum 8 exercises in Python):\n-----------------------------------------------------\n1. Introducing Python as a tool for computational mathematics\n2. Introducing Python libraries (NumPy, SciPy, Matplotlib) for solving linear systems\n3. Performing vector and matrix operations using Python and visualizing results\n4. Solving systems of linear equations using matrix methods and visualizing solutions\n5. Computing eigenvalues, eigenvectors, and Singular Value Decomposition (SVD) and visualizing applications\n6. Implementing the gradient descent algorithm to solve optimization problems and visualize convergence\n7. Solving optimization problems using Newton's method and visualizing results\n8. Solving constrained optimization problems using Lagrange multipliers and visualizing solutions\n9. Simulating random variables and probability distributions and visualizing outcomes\n10. Performing hypothesis testing and regression analysis using Python and visualizing results\n\nTEXT BOOKS:\n-----------\n1. G. Strang, Linear Algebra and Its Applications, 4th Edition, Cengage Learning, 2006. ISBN: 978-0030105678.\n2. S. Boyd and L. Vandenberghe, Convex Optimization, 1st Edition, Cambridge University Press, 2004. ISBN: 978-0521833783.\n3. S. Ross, A First Course in Probability, 9th Edition, Pearson Education, 2014. ISBN: 978-0321794772.\n\nREFERENCE BOOKS:\n----------------\n1. D. C. Lay, S. R. Lay, and J. J. McDonald, Linear Algebra and Its Applications, 5th Edition, Pearson Education, 2015.\n2. K. Hoffman and R. Kunze, Linear Algebra, 2nd Edition, Prentice Hall of India, 2006.\n3. S. S. Rao, Engineering Optimization: Theory and Practice, 4th Edition, Wiley, 2009.\n4. D. P. Bertsekas, Nonlinear Programming, 2nd Edition, Athena Scientific, 1999.\n5. W. Feller, An Introduction to Probability Theory and Its Applications, Vol. 1, 3rd Edition, Wiley, 1968.\n\nMODES OF EVALUATION:\n--------------------\n- Continuous Internal Evaluation (CIE): 50 Marks\n  * Internal Test I:      7.5 Marks\n  * Internal Test II:     7.5 Marks\n  * Taskworks:           10 Marks (Assignments / MCQ / Quiz)\n  * Embedded Lab:        25 Marks\n- End Semester Examination (ESE): 50 Marks\n  * Part A: 14 Marks (7 questions: 2 each from modules 1 & 2, 3 from module 3, 2 marks each)\n  * Part B: 36 Marks (2 questions from each module, answer 1 from each, 12 marks each)\n- Total: 100 Marks\n================================================================================\n"
+    },
+    {
+      "id": "file-syl-26gn106m",
+      "name": "26GN106 - M - Advanced Sensors and Instrumentation (Syllabus 2026).pdf",
+      "originalName": "26GN106_M_Advanced_Sensors_Instrumentation_Syllabus.pdf",
+      "subjectId": "subj-sensor",
+      "subjectName": "Advanced Sensors and Instrumentation",
+      "semesterId": "S1",
+      "moduleNo": null,
+      "category": "Syllabus",
+      "fileType": "application/pdf",
+      "fileUrl": "/uploads/26GN106_M_Advanced_Sensors_Instrumentation_Syllabus.pdf",
+      "fileSize": 821746,
+      "uploadedBy": "Academic Council (Saintgits)",
+      "uploadedAt": "2026-08-03T10:00:00.000Z",
+      "description": "Official M.Tech 2026 Syllabus for 26GN106 - M: Advanced Sensors and Instrumentation (Modules I - IV, Textbooks & CIE evaluation).",
+      "downloadCount": 0,
+      "extractedContent": "================================================================================\nSAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)\nM.Tech. DEGREE PROGRAMME - SYLLABUS 2026\n================================================================================\n\nCOURSE DETAILS:\n---------------\nCourse Code:          26GN106 - M\nCourse Name:          Advanced Sensors and Instrumentation\nSlot:                 Slot F (Elective)\nCourse Delivery Mode: TiC\nCredits:              3 (L-T-P-H: 3-0-0-0)\nPre-requisite:        Nil\nFaculty in Charge:    Dr. Sethu Merin George\nAcademic Year:        2026–2027 (Semester 1)\n\nCOURSE OBJECTIVES:\n------------------\n1. Analyze the structure, elements, and characteristics of measurement systems.\n2. To evaluate different types of measurement errors using statistical tools and data analysis techniques.\n3. To examine the working principles, characteristics, and selection criteria of thermal and proximity sensors.\n4. To assess the operation and industrial applications of force, pressure, humidity, and moisture sensors.\n\nCOURSE OUTCOMES (COs):\n----------------------\nCO1: Analyze the measurement systems, significance, and their characteristics.\nCO2: Evaluate the errors in measurement systems.\nCO3: Compare the working principles of different sensors.\nCO4: Differentiate the operation of force, pressure, humidity & moisture sensors with their applications.\n\nCOURSE CONTENTS & MODULE STRUCTURE:\n-----------------------------------\n\nZeroth Module: General Introduction to the Course (1 Hr)\n- Course introduction with a thorough briefing of Course Objectives and Course Outcomes\n- Overview of the POs that are mapped to the course\n\nModule I: Measurement Systems (9 Hrs)\n- Introduction and significance of measurement\n- Block diagram of measurement system; Methods of measurements\n- Elements and their functions of measurement systems; Applications\n- Characteristics of measurement systems: Static and dynamic\n- Static characteristics: Accuracy, Precision, Sensitivity, Reproducibility, Drift, Static error, Dead zone, Linearity, Resolution, Hysteresis, Loading effects\n- Dynamic characteristics: Speed of response, Measuring lag, Fidelity, Dynamic error\n- Calibration procedures\n\nModule II: Errors in Measurement and their Statistical Analysis (9 Hrs)\n- Types of error: Gross error, Systematic error (Instrumental, Environmental, Observational error), Random error\n- Statistical treatment of data: Measurement test, Histogram, Arithmetic mean\n- Dispersion measurement: Range, Deviation, Average deviation, Standard deviation, Variance\n- Noise and Signal-to-noise ratio (SNR)\n\nModule III: Thermal & Proximity Sensors (9 Hrs)\n- Introduction and sensor classifications\n- Sensor parameters; Selection criterion of sensors\n- General requirements for interfacing\n- Temperature sensors: Thermo-resistive sensors, Resistance Temperature Detectors (RTD), Thermistors, Thermoelectric sensors, Thermocouples\n- Electrical sensors: Capacitive position and displacement sensors, Linear Variable Differential Transformer (LVDT)\n- Proximity sensors: Inductive and capacitive proximity sensors\n\nModule IV: Force, Pressure, Humidity, and Moisture Sensors (9 Hrs)\n- Force sensors and strain gauges\n- Semiconductor strain gauge; Strain gauge accelerometers\n- Pressure sensors: Mechanical pressure sensors, Piezoresistive pressure sensor, Capacitive pressure sensor\n- Humidity sensors: Resistive humidity sensor, Capacitive moisture sensors, Thermal conduction moisture sensors\n\nTEXT BOOKS:\n-----------\n1. E. O. Doebelin and D. N. Manik, Measurement Systems: Application and Design, 6th Edition, McGraw-Hill Education, 2011. ISBN: 978-0070699687.\n2. A. K. Sawhney and P. Sawhney, A Course in Mechanical Measurements and Instrumentation, 12th Edition, Dhanpat Rai & Co. 2018. ISBN: 978-8177000238.\n3. J. P. Bentley, Principles of Measurement Systems, 4th Edition, Pearson Education, 2005. ISBN: 978-0130430281.\n\nREFERENCE BOOKS:\n----------------\n1. S. N. Talbar and A. R. Upadhyay, Instrumentation and Measurement, 3rd Edition, Dhanpat Rai Publishing Company, 2008.\n2. C. D. Johnson, Process Control Instrumentation Technology, 8th Edition, Prentice Hall India, 2013.\n3. V. Zeimann, A Hands-On Course in Sensors Using the Arduino and Raspberry Pi, 2nd Edition, CRC Press, 2019.\n4. J. Fraden, Handbook of Modern Sensors: Physics, Designs, and Applications, 4th Edition, Springer, 2014.\n5. R. P. Areny and J. G. Webster, Sensors and Signal Conditioning, 2nd Edition, Wiley-Interscience, 2000.\n\nMODES OF EVALUATION:\n--------------------\n- Continuous Internal Evaluation (CIE): 50 Marks\n  * Internal Test I:  12.5 Marks\n  * Internal Test II: 12.5 Marks\n  * Taskworks:        25 Marks (Assignment: 50%, Seminar: 50%)\n- End Semester Examination (ESE): 50 Marks (No ESE)\n- Total: 100 Marks\n================================================================================\n"
+    }
+  ],
+  "assignments": [],
+  "announcements": [],
+  "timetable": {
+    "programme": "M.Tech. Computer Science and Systems Engineering",
+    "institution": "Saintgits College of Engineering (Autonomous)",
+    "academicYear": "2026-27",
+    "semester": "Semester 1",
+    "wef": "03/08/2026",
+    "track": "First Shift - General Track",
+    "periods": [
+      {
+        "number": 1,
+        "time": "9:00 - 10:00",
+        "start": "09:00",
+        "end": "10:00"
+      },
+      {
+        "number": 2,
+        "time": "10:05 - 11:05",
+        "start": "10:05",
+        "end": "11:05"
+      },
+      {
+        "number": 3,
+        "time": "11:15 - 12:15",
+        "start": "11:15",
+        "end": "12:15"
+      },
+      {
+        "number": "break",
+        "label": "BREAK HOURS",
+        "time": "12:15 - 1:15",
+        "isBreak": true
+      },
+      {
+        "number": 4,
+        "time": "1:15 - 2:15",
+        "start": "13:15",
+        "end": "14:15"
+      },
+      {
+        "number": 5,
+        "time": "2:20 - 3:20",
+        "start": "14:20",
+        "end": "15:20"
+      },
+      {
+        "number": 6,
+        "time": "3:30 - 4:30",
+        "start": "15:30",
+        "end": "16:30"
+      }
+    ],
+    "courses": [
+      {
+        "slot": "A",
+        "code": "26SE101",
+        "name": "Distributed Systems and Advanced Computing",
+        "faculty": "Er. Lini Ickappan",
+        "periodsPerWeek": 4,
+        "color": "purple",
+        "subjectId": "subj-ds"
+      },
+      {
+        "slot": "B",
+        "code": "26SE102",
+        "name": "Advanced Data Structures & Algorithm Design",
+        "faculty": "Er. Sheeba Babu",
+        "periodsPerWeek": 3,
+        "color": "blue",
+        "subjectId": "subj-adsa"
+      },
+      {
+        "slot": "C",
+        "code": "26SE103",
+        "name": "Database Systems and Distributed Data Management",
+        "faculty": "Er. Remya Rachel Joseph",
+        "periodsPerWeek": 5,
+        "color": "emerald",
+        "subjectId": "subj-dbms"
+      },
+      {
+        "slot": "D",
+        "code": "26SE104",
+        "name": "Advanced Mathematical Methods for Computing Systems",
+        "faculty": "Mr. Prince Achankunju",
+        "periodsPerWeek": 5,
+        "color": "cyan",
+        "subjectId": "subj-mfc"
+      },
+      {
+        "slot": "E",
+        "code": "26SE105 - J",
+        "name": "Automata Theory and Computability",
+        "faculty": "Er. Justin Mathew",
+        "periodsPerWeek": 3,
+        "color": "amber",
+        "subjectId": "subj-atc"
+      },
+      {
+        "slot": "F",
+        "code": "26GN106 - M / P",
+        "name": "Advanced Sensors and Instrumentation / Nanotechnology and Nanoengineering",
+        "faculty": "Dr. Sethu Merin George / Dr. David K Daniel",
+        "periodsPerWeek": 3,
+        "color": "pink",
+        "subjectId": "subj-sensor",
+        "electives": [
+          {
+            "code": "26GN106 - M",
+            "name": "Advanced Sensors and Instrumentation",
+            "faculty": "Dr. Sethu Merin George"
+          },
+          {
+            "code": "26GN106 - P",
+            "name": "Nanotechnology and Nanoengineering",
+            "faculty": "Dr. David K Daniel"
+          }
+        ]
+      },
+      {
+        "slot": "DI",
+        "code": "DI",
+        "name": "Dissertation Ideation",
+        "faculty": "Dr. Arun",
+        "periodsPerWeek": 6,
+        "color": "indigo",
+        "subjectId": "subj-di"
+      }
+    ],
+    "schedule": {
+      "Monday": [
+        {
+          "period": 1,
+          "slot": "E",
+          "courseCode": "26SE105 - J",
+          "title": "Automata Theory and Computability",
+          "faculty": "Er. Justin Mathew",
+          "time": "9:00 - 10:00",
+          "color": "amber"
+        },
+        {
+          "period": 2,
+          "slot": "C",
+          "courseCode": "26SE103",
+          "title": "Database Systems and Distributed Data Management",
+          "faculty": "Er. Remya Rachel Joseph",
+          "time": "10:05 - 11:05",
+          "color": "emerald"
+        },
+        {
+          "period": 3,
+          "slot": "D",
+          "courseCode": "26SE104",
+          "title": "Advanced Mathematical Methods for Computing Systems",
+          "faculty": "Mr. Prince Achankunju",
+          "time": "11:15 - 12:15",
+          "color": "cyan"
+        },
+        {
+          "period": 4,
+          "span": 2,
+          "isLab": true,
+          "slot": "C (L)",
+          "courseCode": "26SE103",
+          "title": "Database Systems Lab - C(L)",
+          "faculty": "Er. Remya Rachel Joseph",
+          "time": "1:15 - 3:20",
+          "color": "emerald",
+          "note": "Periods 4 & 5 (Lab Session)"
+        },
+        {
+          "period": 5,
+          "isSpanChild": true
+        },
+        {
+          "period": 6,
+          "slot": "F",
+          "courseCode": "26GN106 - M",
+          "title": "Advanced Sensors & Instrumentation",
+          "faculty": "Dr. Sethu Merin George",
+          "time": "3:30 - 4:30",
+          "color": "pink"
+        }
+      ],
+      "Tuesday": [
+        {
+          "period": 1,
+          "span": 2,
+          "isLab": true,
+          "slot": "D (L)",
+          "courseCode": "26SE104",
+          "title": "Computing Systems Lab - D(L)",
+          "faculty": "Mr. Prince Achankunju",
+          "time": "9:00 - 11:05",
+          "color": "cyan",
+          "note": "Periods 1 & 2 (Lab Session)"
+        },
+        {
+          "period": 2,
+          "isSpanChild": true
+        },
+        {
+          "period": 3,
+          "slot": "F",
+          "courseCode": "26GN106 - M",
+          "title": "Advanced Sensors & Instrumentation",
+          "faculty": "Dr. Sethu Merin George",
+          "time": "11:15 - 12:15",
+          "color": "pink"
+        },
+        {
+          "period": 4,
+          "slot": "A",
+          "courseCode": "26SE101",
+          "title": "Distributed Systems and Advanced Computing",
+          "faculty": "Er. Lini Ickappan",
+          "time": "1:15 - 2:15",
+          "color": "purple"
+        },
+        {
+          "period": 5,
+          "slot": "DI",
+          "courseCode": "DI",
+          "title": "Dissertation Ideation",
+          "faculty": "Dr. Arun",
+          "time": "2:20 - 3:20",
+          "color": "indigo"
+        },
+        {
+          "period": 6,
+          "slot": "A",
+          "courseCode": "26SE101",
+          "title": "Distributed Systems and Advanced Computing",
+          "faculty": "Er. Lini Ickappan",
+          "time": "3:30 - 4:30",
+          "color": "purple"
+        }
+      ],
+      "Wednesday": [
+        {
+          "period": 1,
+          "span": 3,
+          "slot": "DI",
+          "courseCode": "DI",
+          "title": "Dissertation Ideation (Morning Block)",
+          "faculty": "Dr. Arun",
+          "time": "9:00 - 12:15",
+          "color": "indigo",
+          "note": "Periods 1 to 3 (3 Hours Focus)"
+        },
+        {
+          "period": 2,
+          "isSpanChild": true
+        },
+        {
+          "period": 3,
+          "isSpanChild": true
+        },
+        {
+          "period": 4,
+          "slot": "DI",
+          "courseCode": "DI",
+          "title": "Dissertation Ideation",
+          "faculty": "Dr. Arun",
+          "time": "1:15 - 2:15",
+          "color": "indigo"
+        },
+        {
+          "period": 5,
+          "slot": "E",
+          "courseCode": "26SE105 - J",
+          "title": "Automata Theory and Computability",
+          "faculty": "Er. Justin Mathew",
+          "time": "2:20 - 3:20",
+          "color": "amber"
+        },
+        {
+          "period": 6,
+          "slot": "C",
+          "courseCode": "26SE103",
+          "title": "Database Systems and Distributed Data Management",
+          "faculty": "Er. Remya Rachel Joseph",
+          "time": "3:30 - 4:30",
+          "color": "emerald"
+        }
+      ],
+      "Thursday": [
+        {
+          "period": 1,
+          "slot": "B",
+          "courseCode": "26SE102",
+          "title": "Advanced Data Structures & Algorithm Design",
+          "faculty": "Er. Sheeba Babu",
+          "time": "9:00 - 10:00",
+          "color": "blue"
+        },
+        {
+          "period": 2,
+          "slot": "F",
+          "courseCode": "26GN106 - M",
+          "title": "Advanced Sensors & Instrumentation",
+          "faculty": "Dr. Sethu Merin George",
+          "time": "10:05 - 11:05",
+          "color": "pink"
+        },
+        {
+          "period": 3,
+          "slot": "A",
+          "courseCode": "26SE101",
+          "title": "Distributed Systems and Advanced Computing",
+          "faculty": "Er. Lini Ickappan",
+          "time": "11:15 - 12:15",
+          "color": "purple"
+        },
+        {
+          "period": 4,
+          "slot": "D",
+          "courseCode": "26SE104",
+          "title": "Advanced Mathematical Methods for Computing Systems",
+          "faculty": "Mr. Prince Achankunju",
+          "time": "1:15 - 2:15",
+          "color": "cyan"
+        },
+        {
+          "period": 5,
+          "slot": "B",
+          "courseCode": "26SE102",
+          "title": "Advanced Data Structures & Algorithm Design",
+          "faculty": "Er. Sheeba Babu",
+          "time": "2:20 - 3:20",
+          "color": "blue"
+        },
+        {
+          "period": 6,
+          "slot": "DI",
+          "courseCode": "DI",
+          "title": "Dissertation Ideation",
+          "faculty": "Dr. Arun",
+          "time": "3:30 - 4:30",
+          "color": "indigo"
+        }
+      ],
+      "Friday": [
+        {
+          "period": 1,
+          "slot": "A",
+          "courseCode": "26SE101",
+          "title": "Distributed Systems and Advanced Computing",
+          "faculty": "Er. Lini Ickappan",
+          "time": "9:00 - 10:00",
+          "color": "purple"
+        },
+        {
+          "period": 2,
+          "slot": "E",
+          "courseCode": "26SE105 - J",
+          "title": "Automata Theory and Computability",
+          "faculty": "Er. Justin Mathew",
+          "time": "10:05 - 11:05",
+          "color": "amber"
+        },
+        {
+          "period": 3,
+          "slot": "C",
+          "courseCode": "26SE103",
+          "title": "Database Systems and Distributed Data Management",
+          "faculty": "Er. Remya Rachel Joseph",
+          "time": "11:15 - 12:15",
+          "color": "emerald"
+        },
+        {
+          "period": 4,
+          "isFree": true,
+          "slot": "-",
+          "courseCode": "-",
+          "title": "FREE HOUR",
+          "faculty": "-",
+          "time": "1:15 - 2:15",
+          "color": "slate"
+        },
+        {
+          "period": 5,
+          "slot": "D",
+          "courseCode": "26SE104",
+          "title": "Advanced Mathematical Methods for Computing Systems",
+          "faculty": "Mr. Prince Achankunju",
+          "time": "2:20 - 3:20",
+          "color": "cyan"
+        },
+        {
+          "period": 6,
+          "slot": "B",
+          "courseCode": "26SE102",
+          "title": "Advanced Data Structures & Algorithm Design",
+          "faculty": "Er. Sheeba Babu",
+          "time": "3:30 - 4:30",
+          "color": "blue"
+        }
+      ]
+    }
+  }
+}

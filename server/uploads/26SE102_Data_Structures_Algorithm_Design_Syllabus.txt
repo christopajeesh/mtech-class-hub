@@ -1,0 +1,94 @@
+================================================================================
+SAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)
+M.Tech. DEGREE PROGRAMME - SYLLABUS 2026
+================================================================================
+
+COURSE DETAILS:
+---------------
+Course Code:          26SE102
+Course Name:          Advanced Data Structures & Algorithm Design
+Slot:                 Slot B
+Course Delivery Mode: TiC/MOOC
+Credits:              3 (L-T-P-H: 3-0-0-0)
+Pre-requisite:        Nil
+Faculty in Charge:    Er. Sheeba Babu
+Academic Year:        2026–2027 (Semester 1)
+
+COURSE OBJECTIVES:
+------------------
+1. To introduce fundamental concepts of algorithm design, complexity analysis, and asymptotic behaviour.
+2. To develop understanding of core data structures such as stacks, queues, trees, and their applications.
+3. To enable the application of advanced data structures and algorithm design paradigms like Divide and Conquer and Greedy methods.
+4. To analyse and evaluate graph algorithms, optimization techniques, and advanced sorting and selection methods.
+
+COURSE OUTCOMES (COs):
+----------------------
+CO1: Explain algorithmic concepts, complexity measures, and asymptotic analysis techniques.
+CO2: Apply fundamental data structures such as stacks, queues, and binary search trees to solve problems.
+CO3: Design algorithms using advanced paradigms like Divide and Conquer and implement balanced trees and heaps.
+CO4: Analyse graph algorithms and advanced techniques for solving optimization and real-world computational problems.
+
+COURSE CONTENTS & MODULE STRUCTURE:
+-----------------------------------
+
+Zeroth Module: General Introduction to the Course (1 Hr)
+- Course introduction with a thorough briefing of Course Objectives and Course Outcomes
+- Overview of the POs that are mapped to the course
+
+Module I: Introduction to Algorithm Design and Analysis (9 Hrs)
+- Introduction to algorithmic thinking and characteristics of efficient algorithms
+- Time and Space Complexity analysis; Asymptotic notations
+- Linear-time algorithms; Maximum subarray problem
+- Mathematical foundations of algorithm analysis
+- Techniques for writing and proving correctness of algorithms
+- Local minima problems in 1D and 2D arrays
+
+Module II: Fundamental Data Structures (9 Hrs)
+- Abstract data types (ADT)
+- Range minimum query (RMQ) in 1D arrays
+- Binary search trees (BST): Structure and properties, Height and balancing concepts
+- Stack and queue data structures
+- Expression evaluation using stacks
+- Grid-based distance problems
+
+Module III: Advanced Data Structures and Algorithmic Paradigms (9 Hrs)
+- Balanced trees: Red-black trees (Height properties, Insertion, Deletion operations)
+- Divide and conquer paradigm and applications: Half-majority problem, Efficient multiplication techniques
+- Inversion counting
+- Heap data structure and priority queues
+- Dynamic data structures
+
+Module IV: Graph Algorithms and Advanced Techniques (9 Hrs)
+- Graph representations and fundamentals
+- Traversal algorithms: Breadth first search (BFS), Depth first search (DFS) and DFS tree
+- Bipartite graphs; Articulation points and biconnected components
+- Disjoint sets (Union-Find) and set operations
+- Dijkstra's shortest path algorithm
+- Selection problems; Non-comparison sorting
+- Range queries and multi-increment techniques
+
+TEXT BOOKS:
+-----------
+1. T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, Introduction to Algorithms, 4th edition, MIT Press, 2022. ISBN: 978-0262046305.
+2. M. T. Goodrich, R. Tamassia, and M. H. Goldwasser, Data Structures and Algorithms in Java, 6th edition, Wiley, 2014. ISBN: 978-1118771334.
+3. J. Kleinberg and Éva Tardos, Algorithm Design, 2nd edition, Pearson Education, 2022. ISBN: 978-0132131087.
+
+REFERENCE BOOKS:
+----------------
+1. R. Sedgewick and K. Wayne, Algorithms, 4th edition, Addison-Wesley, 2011.
+2. S. Dasgupta, C. Papadimitriou, and U. Vazirani, Algorithms, 1st edition, McGraw-Hill, 2006.
+3. A. V. Aho, J. E. Hopcroft, and J. D. Ullman, Data Structures and Algorithms, Pearson, 1983.
+4. S. S. Skiena, The Algorithm Design Manual, 3rd edition, Springer, 2020.
+5. S. Baase and A. Van Gelder, Computer Algorithms: Introduction to Design and Analysis, 3rd edition, Pearson, 2000.
+
+MODES OF EVALUATION:
+--------------------
+- Continuous Internal Evaluation (CIE): 40 Marks
+  * Internal Test I:  12.5 Marks
+  * Internal Test II: 12.5 Marks
+  * Taskworks:        15 Marks (Assignment: 50%, Seminar: 50%)
+- End Semester Examination (ESE): 60 Marks
+  * Part A: 24 marks (8 questions, 2 from each module, 3 marks each)
+  * Part B: 36 marks (2 questions from each module, answer 1 from each, 9 marks each)
+- Total: 100 Marks
+================================================================================

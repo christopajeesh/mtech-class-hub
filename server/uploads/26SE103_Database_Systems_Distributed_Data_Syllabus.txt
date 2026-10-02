@@ -1,0 +1,108 @@
+================================================================================
+SAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)
+M.Tech. DEGREE PROGRAMME - SYLLABUS 2026
+================================================================================
+
+COURSE DETAILS:
+---------------
+Course Code:          26SE103
+Course Name:          Database Systems and Distributed Data Management
+Slot:                 Slot C & Slot C(L) Lab
+Course Delivery Mode: TiC & PiL (Theory in Classroom & Practice in Lab)
+Credits:              4 (L-T-P-H: 3-0-2-0)
+Pre-requisite:        Nil
+Faculty in Charge:    Er. Remya Rachel Joseph
+Academic Year:        2026–2027 (Semester 1)
+
+COURSE OBJECTIVES:
+------------------
+1. To gain knowledge of core concepts, architectures, and challenges in distributed computing environments.
+2. To learn the principles of big data and understand how Hadoop processes and manages large-scale data.
+3. To study HDFS and MapReduce for efficient distributed storage and parallel data processing.
+4. To learn different types of NoSQL databases and their role in handling scalable, distributed data.
+5. To implement CRUD operations, optimize queries, and integrate NoSQL databases with applications.
+
+COURSE OUTCOMES (COs):
+----------------------
+CO1: Understand and explain the principles, architectures, and challenges of distributed systems.
+CO2: Understand big data concepts and analyze the Hadoop ecosystem and its components.
+CO3: Apply HDFS and MapReduce techniques for distributed storage and data processing.
+CO4: Analyze NoSQL database models and compare them with traditional relational databases.
+CO5: Design and implement NoSQL database solutions with efficient querying and scalability.
+
+COURSE CONTENTS & MODULE STRUCTURE:
+-----------------------------------
+
+Zeroth Module: General Introduction to the Course (1 Hr)
+- Course introduction with a thorough briefing of Course Objectives and Course Outcomes
+- Overview of the POs that are mapped to the course
+
+Module I: Big Data and Hadoop Ecosystem (12 Hrs)
+- Introduction to distributed database
+- Communication in distributed systems (RPC, RMI, message passing)
+- Big data concepts and characteristics
+- Introduction to Hadoop ecosystem
+- Hadoop architecture and components: Hadoop cluster setup and configuration
+- Hadoop YARN architecture
+- Hadoop ecosystem tools
+- Limitations of traditional systems vs Hadoop
+
+Module II: HDFS and MapReduce Programming (10 Hrs)
+- Data storage and processing in Hadoop
+- Hadoop distributed file system (HDFS) architecture: HDFS components
+- Data replication and fault tolerance
+- Introduction to MapReduce paradigm
+- MapReduce workflow and components
+- Writing MapReduce programs (Java/Python)
+- Input and output formats; Combiner
+
+Module III: NoSQL Database Programming and Applications (14 Hrs)
+- Introduction to NoSQL databases; Need for NoSQL
+- Types of NoSQL databases: Key-value stores, Document stores, Column-family stores, Graph databases
+- Data modelling in NoSQL
+- Popular NoSQL databases: MongoDB, Cassandra
+- CRUD operations in NoSQL databases
+- Querying and indexing techniques
+- Schema design and optimization
+- Working with MongoDB (documents, collections, aggregation framework)
+- Programming with Cassandra (CQL basics)
+
+LABORATORY EXERCISES (Minimum 8 exercises):
+-------------------------------------------
+1. Sending message from client to server through RPC in Java
+2. Hadoop single-node and multi-node installation
+3. Familiarization of HDFS commands
+4. Demonstrating the usage of combiners and partitioners in Hadoop
+5. Understanding NoSQL concepts and installing MongoDB / Cassandra
+6. Performing Create, Read, Update, Delete operations (CRUD in MongoDB)
+7. Creating and querying tables in Apache Cassandra using CQL
+8. Performing MapReduce in MongoDB
+9. Developing a NoSQL Data Model for a specific application
+10. Implementing the NoSQL Application in a suitable model
+
+TEXT BOOKS:
+-----------
+1. G. Coulouris, J. Dollimore, T. Kindberg, and G. Blair, Distributed Systems: Concepts and Design, 5th Edition, Addison-Wesley, 2011. ISBN: 978-0132143011.
+2. T. White, Hadoop: The Definitive Guide, 4th edition, O'Reilly Media, 2015. ISBN: 978-1491901632.
+3. M. Fowler and P. Sadalage, NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence, Addison-Wesley, 2012. ISBN: 978-0321826626.
+
+REFERENCE BOOKS:
+----------------
+1. M. Kleppmann, Designing Data-Intensive Applications, 1st edition, O'Reilly Media, 2017. ISBN: 978-1449373320.
+2. J. Leskovec, A. Rajaraman, and J. D. Ullman, Mining of Massive Datasets, 2nd ed, Cambridge University Press, 2014.
+3. L. George, HBase: The Definitive Guide, O'Reilly Media, 2011.
+4. E. Hewitt and J. Carpenter, Cassandra: The Definitive Guide, 2nd Edition, O'Reilly Media, 2016.
+5. K. Chodorow, MongoDB: The Definitive Guide, 2nd Edition, O'Reilly Media, 2013.
+
+MODES OF EVALUATION:
+--------------------
+- Continuous Internal Evaluation (CIE): 50 Marks
+  * Internal Test I:      7.5 Marks
+  * Internal Test II:     7.5 Marks
+  * Taskworks:           10 Marks (Assignments / MCQ / Quiz)
+  * Embedded Lab:        25 Marks
+- End Semester Examination (ESE): 50 Marks
+  * Part A: 14 Marks (7 questions: 2 from modules 1 & 2, 3 from module 3, 2 marks each)
+  * Part B: 36 Marks (2 questions from each module, answer 1 from each, 12 marks each)
+- Total: 100 Marks
+================================================================================

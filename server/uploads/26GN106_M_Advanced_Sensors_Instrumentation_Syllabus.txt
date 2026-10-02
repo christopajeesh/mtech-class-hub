@@ -1,0 +1,89 @@
+================================================================================
+SAINTGITS COLLEGE OF ENGINEERING (AUTONOMOUS)
+M.Tech. DEGREE PROGRAMME - SYLLABUS 2026
+================================================================================
+
+COURSE DETAILS:
+---------------
+Course Code:          26GN106 - M
+Course Name:          Advanced Sensors and Instrumentation
+Slot:                 Slot F (Elective)
+Course Delivery Mode: TiC
+Credits:              3 (L-T-P-H: 3-0-0-0)
+Pre-requisite:        Nil
+Faculty in Charge:    Dr. Sethu Merin George
+Academic Year:        2026–2027 (Semester 1)
+
+COURSE OBJECTIVES:
+------------------
+1. Analyze the structure, elements, and characteristics of measurement systems.
+2. To evaluate different types of measurement errors using statistical tools and data analysis techniques.
+3. To examine the working principles, characteristics, and selection criteria of thermal and proximity sensors.
+4. To assess the operation and industrial applications of force, pressure, humidity, and moisture sensors.
+
+COURSE OUTCOMES (COs):
+----------------------
+CO1: Analyze the measurement systems, significance, and their characteristics.
+CO2: Evaluate the errors in measurement systems.
+CO3: Compare the working principles of different sensors.
+CO4: Differentiate the operation of force, pressure, humidity & moisture sensors with their applications.
+
+COURSE CONTENTS & MODULE STRUCTURE:
+-----------------------------------
+
+Zeroth Module: General Introduction to the Course (1 Hr)
+- Course introduction with a thorough briefing of Course Objectives and Course Outcomes
+- Overview of the POs that are mapped to the course
+
+Module I: Measurement Systems (9 Hrs)
+- Introduction and significance of measurement
+- Block diagram of measurement system; Methods of measurements
+- Elements and their functions of measurement systems; Applications
+- Characteristics of measurement systems: Static and dynamic
+- Static characteristics: Accuracy, Precision, Sensitivity, Reproducibility, Drift, Static error, Dead zone, Linearity, Resolution, Hysteresis, Loading effects
+- Dynamic characteristics: Speed of response, Measuring lag, Fidelity, Dynamic error
+- Calibration procedures
+
+Module II: Errors in Measurement and their Statistical Analysis (9 Hrs)
+- Types of error: Gross error, Systematic error (Instrumental, Environmental, Observational error), Random error
+- Statistical treatment of data: Measurement test, Histogram, Arithmetic mean
+- Dispersion measurement: Range, Deviation, Average deviation, Standard deviation, Variance
+- Noise and Signal-to-noise ratio (SNR)
+
+Module III: Thermal & Proximity Sensors (9 Hrs)
+- Introduction and sensor classifications
+- Sensor parameters; Selection criterion of sensors
+- General requirements for interfacing
+- Temperature sensors: Thermo-resistive sensors, Resistance Temperature Detectors (RTD), Thermistors, Thermoelectric sensors, Thermocouples
+- Electrical sensors: Capacitive position and displacement sensors, Linear Variable Differential Transformer (LVDT)
+- Proximity sensors: Inductive and capacitive proximity sensors
+
+Module IV: Force, Pressure, Humidity, and Moisture Sensors (9 Hrs)
+- Force sensors and strain gauges
+- Semiconductor strain gauge; Strain gauge accelerometers
+- Pressure sensors: Mechanical pressure sensors, Piezoresistive pressure sensor, Capacitive pressure sensor
+- Humidity sensors: Resistive humidity sensor, Capacitive moisture sensors, Thermal conduction moisture sensors
+
+TEXT BOOKS:
+-----------
+1. E. O. Doebelin and D. N. Manik, Measurement Systems: Application and Design, 6th Edition, McGraw-Hill Education, 2011. ISBN: 978-0070699687.
+2. A. K. Sawhney and P. Sawhney, A Course in Mechanical Measurements and Instrumentation, 12th Edition, Dhanpat Rai & Co. 2018. ISBN: 978-8177000238.
+3. J. P. Bentley, Principles of Measurement Systems, 4th Edition, Pearson Education, 2005. ISBN: 978-0130430281.
+
+REFERENCE BOOKS:
+----------------
+1. S. N. Talbar and A. R. Upadhyay, Instrumentation and Measurement, 3rd Edition, Dhanpat Rai Publishing Company, 2008.
+2. C. D. Johnson, Process Control Instrumentation Technology, 8th Edition, Prentice Hall India, 2013.
+3. V. Zeimann, A Hands-On Course in Sensors Using the Arduino and Raspberry Pi, 2nd Edition, CRC Press, 2019.
+4. J. Fraden, Handbook of Modern Sensors: Physics, Designs, and Applications, 4th Edition, Springer, 2014.
+5. R. P. Areny and J. G. Webster, Sensors and Signal Conditioning, 2nd Edition, Wiley-Interscience, 2000.
+
+MODES OF EVALUATION:
+--------------------
+- Continuous Internal Evaluation (CIE): 50 Marks
+  * Internal Test I:  12.5 Marks
+  * Internal Test II: 12.5 Marks
+  * Taskworks:        25 Marks (Assignment: 50%, Seminar: 50%)
+- End Semester Examination (ESE): 50 Marks (No ESE)
+- Total: 100 Marks
+================================================================================
