@@ -234,8 +234,15 @@ export const QuestionPapersPage = () => {
                     {paper.name}
                   </h3>
 
-                  <p className="text-xs text-slate-400 mt-1">
-                    {paper.subjectName} • Module {paper.moduleNumber || 'All'}
+                  <p 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/subjects/${paper.subjectId}?tab=question-papers`);
+                    }}
+                    className="text-xs text-slate-400 mt-1 hover:text-emerald-300 transition-colors cursor-pointer"
+                    title="Open in Subject Question Papers Vault"
+                  >
+                    <span className="underline-offset-2 hover:underline font-medium">{paper.subjectName}</span> • Module {paper.moduleNumber || 'All'}
                   </p>
                 </div>
 

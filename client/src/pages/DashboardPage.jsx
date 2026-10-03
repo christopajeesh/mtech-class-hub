@@ -216,7 +216,14 @@ export const DashboardPage = () => {
                 </div>
 
                 <div className="pt-2 border-t border-slate-800/60 flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-slate-400">
+                  <span 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(isDI ? `/subjects/${sub.id}?tab=assignments` : `/subjects/${sub.id}?tab=syllabus`);
+                    }}
+                    className="text-[11px] text-slate-400 hover:text-indigo-300 transition-colors underline-offset-2 hover:underline cursor-pointer"
+                    title={isDI ? "Open Research & Milestones" : "Open Syllabus Directly"}
+                  >
                     {isDI ? 'Research & Milestones' : 'Syllabus & Course Notes'}
                   </span>
                   <span className="text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1 font-medium text-xs">

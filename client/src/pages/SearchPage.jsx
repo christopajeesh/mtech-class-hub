@@ -191,7 +191,17 @@ export const SearchPage = () => {
                           {file.name}
                         </h4>
                         <p className="text-[11px] text-slate-400 truncate mt-0.5">
-                          {file.subjectName} • Module {file.moduleNumber} • Uploaded by {file.uploadedBy}
+                          <span 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const tabParam = file.category?.toLowerCase() === 'ppt' ? 'ppt' : file.category?.toLowerCase() === 'question paper' ? 'question-papers' : file.category?.toLowerCase() === 'syllabus' ? 'syllabus' : 'notes';
+                              navigate(`/subjects/${file.subjectId}?tab=${tabParam}`);
+                            }}
+                            className="hover:text-indigo-300 hover:underline cursor-pointer font-medium text-slate-300"
+                            title="Open in this subject tab"
+                          >
+                            {file.subjectName}
+                          </span> • Module {file.moduleNumber || 'All'} • Uploaded by {file.uploadedBy}
                         </p>
                       </div>
                     </div>

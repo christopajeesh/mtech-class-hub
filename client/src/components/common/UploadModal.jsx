@@ -86,6 +86,36 @@ const formatSize = (bytes) => {
   return `${Math.round(bytes / 1024)} KB`;
 };
 
+export const normalizeCategory = (cat) => {
+  if (!cat) return 'Notes';
+  const c = String(cat).toLowerCase().trim();
+  if (c.includes('question') || c.includes('bank') || c.includes('paper') || c === 'qp') {
+    return 'Question Paper';
+  }
+  if (c.includes('assign')) {
+    return 'Assignment';
+  }
+  if (c.includes('syllab') || c.includes('sylab')) {
+    return 'Syllabus';
+  }
+  if (c === 'ppt' || c.includes('powerpoint') || c.includes('slide') || c.includes('presentation')) {
+    return 'PPT';
+  }
+  if (c.includes('important')) {
+    return 'Important Questions';
+  }
+  if (c.includes('reference') || c.includes('book')) {
+    return 'Reference';
+  }
+  if (c.includes('other')) {
+    return 'Other';
+  }
+  if (c.includes('note')) {
+    return 'Notes';
+  }
+  return 'Notes';
+};
+
 export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester, initialSubject, initialModule, initialCategory }) => {
   const { currentUser, profilePic, settings } = useAuth();
   const fileInputRef = useRef(null);
@@ -96,7 +126,7 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
   const [semesterId, setSemesterId] = useState(initialSemester || 'S1');
   const [subjectId, setSubjectId] = useState(initialSubject || '');
   const [moduleNumber, setModuleNumber] = useState(initialModule ? String(initialModule) : '');
-  const [category, setCategory] = useState(initialCategory || 'Notes');
+  const [category, setCategory] = useState(() => normalizeCategory(initialCategory));
   const [description, setDescription] = useState('');
   const [examType, setExamType] = useState('Internal 1');
   const [year, setYear] = useState(new Date().getFullYear());
@@ -117,17 +147,10 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
   // Immediately synchronize props whenever modal opens
   useEffect(() => {
     if (isOpen) {
-      if (initialCategory) {
-        const cat = initialCategory.toLowerCase();
-        if (cat.includes('question') || cat.includes('bank') || cat.includes('paper')) {
-          setCategory('Question Paper');
-        } else {
-          setCategory(initialCategory);
-        }
-      }
+      setCategory(normalizeCategory(initialCategory));
       if (initialSemester) setSemesterId(initialSemester);
       if (initialSubject) setSubjectId(initialSubject);
-      if (initialModule) setModuleNumber(String(initialModule));
+      if (initialModule !== undefined && initialModule !== null) setModuleNumber(String(initialModule));
       setSelectedFiles([]);
       setError('');
     }
@@ -423,14 +446,41 @@ export const UploadModal = ({ isOpen, onClose, onUploadSuccess, initialSemester,
               </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1">
-                Category
-              </label>
+            <div className="sm:col-span-2">
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="block text-xs font-semibold text-slate-300">
+                  Category / Document Type
+                </label>
+                <span className="text-[11px] text-indigo-400 font-mono font-medium">
+                  Selected: {availableCategories.find(c => c.id === category)?.label.split(' / ')[0] || category}
+                </span>
+              </div>
+
+              {/* Clickable Category Pills */}
+              <div className="flex items-center gap-1.5 flex-wrap mb-2.5">
+                {availableCategories.map((c) => {
+                  const isSelected = category === c.id;
+                  return (
+                    <button
+                      key={c.id}
+                      type="button"
+                      onClick={() => setCategory(c.id)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
+                        isSelected
+                          ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-950/60 ring-2 ring-indigo-400/60 scale-[1.02]'
+                          : 'bg-slate-900 border border-slate-700/80 text-slate-300 hover:text-white hover:bg-slate-800'
+                      }`}
+                    >
+                      <span>{c.label.split(' / ')[0]}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+                className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-slate-300 focus:outline-none focus:border-indigo-500"
               >
                 {availableCategories.map((c) => (
                   <option key={c.id} value={c.id}>

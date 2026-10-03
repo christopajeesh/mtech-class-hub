@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useSearchParams } from 'react-router-dom';
 import { subjectApi, fileApi, assignmentApi } from '../services/api.js';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useUIModal } from '../components/layout/Layout.jsx';
@@ -24,16 +24,53 @@ import {
 } from 'lucide-react';
 import { Modal, ConfirmModal } from '../components/common/Modal.jsx';
 
+const TAB_KEYS = {
+  all: 'All Files',
+  'all-files': 'All Files',
+  syllabus: 'Syllabus',
+  notes: 'Notes',
+  ppt: 'PPT',
+  'question-papers': 'Question Papers',
+  'question-paper': 'Question Papers',
+  qp: 'Question Papers',
+  papers: 'Question Papers',
+  assignments: 'Assignments',
+  assignment: 'Assignments'
+};
+
+const TAB_TO_SLUG = {
+  'All Files': 'all',
+  'Syllabus': 'syllabus',
+  'Notes': 'notes',
+  'PPT': 'ppt',
+  'Question Papers': 'question-papers',
+  'Assignments': 'assignments'
+};
+
 export const SubjectDetailPage = () => {
   const { subjectId } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { openUploadModal, openPreview } = useUIModal();
 
   const { currentUser } = useAuth();
   const [subject, setSubject] = useState(null);
   const [files, setFiles] = useState([]);
   const [assignments, setAssignments] = useState([]);
-  const [selectedModFilter, setSelectedModFilter] = useState('all');
-  const [activeTab, setActiveTab] = useState('All Files'); // 'All Files', 'Syllabus', 'Notes', 'PPT', 'Question Papers', 'Assignments'
+
+  const getInitialTab = () => {
+    const param = searchParams.get('tab');
+    if (param && TAB_KEYS[param.toLowerCase()]) {
+      return TAB_KEYS[param.toLowerCase()];
+    }
+    const saved = localStorage.getItem(`class_hub_subject_tab_${subjectId}`);
+    if (saved && TAB_KEYS[saved.toLowerCase()]) {
+      return TAB_KEYS[saved.toLowerCase()];
+    }
+    return 'All Files';
+  };
+
+  const [activeTab, setActiveTab] = useState(getInitialTab);
+  const [selectedModFilter, setSelectedModFilter] = useState(() => searchParams.get('mod') || 'all');
   const [loading, setLoading] = useState(true);
   const [deleteFileConfirm, setDeleteFileConfirm] = useState(null);
 
@@ -166,9 +203,67 @@ export const SubjectDetailPage = () => {
     }
   };
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    const slug = TAB_TO_SLUG[tab] || 'all';
+    try {
+      localStorage.setItem(`class_hub_subject_tab_${subjectId}`, slug);
+    } catch (e) {}
+    const newParams = new URLSearchParams(searchParams);
+    if (slug === 'all') {
+      newParams.delete('tab');
+    } else {
+      newParams.set('tab', slug);
+    }
+    setSearchParams(newParams, { replace: false });
+  };
+
+  const handleModFilterChange = (mod) => {
+    setSelectedModFilter(mod);
+    const newParams = new URLSearchParams(searchParams);
+    if (mod === 'all') {
+      newParams.delete('mod');
+    } else {
+      newParams.set('mod', mod);
+    }
+    setSearchParams(newParams, { replace: true });
+  };
+
+  // Sync tab & module filter when searchParams or subjectId changes
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam && TAB_KEYS[tabParam.toLowerCase()]) {
+      const resolvedTab = TAB_KEYS[tabParam.toLowerCase()];
+      setActiveTab(resolvedTab);
+      try {
+        localStorage.setItem(`class_hub_subject_tab_${subjectId}`, TAB_TO_SLUG[resolvedTab]);
+      } catch (e) {}
+    } else if (!tabParam) {
+      const saved = localStorage.getItem(`class_hub_subject_tab_${subjectId}`);
+      if (saved && TAB_KEYS[saved.toLowerCase()]) {
+        setActiveTab(TAB_KEYS[saved.toLowerCase()]);
+      } else {
+        setActiveTab('All Files');
+      }
+    }
+
+    const modParam = searchParams.get('mod');
+    if (modParam) {
+      setSelectedModFilter(modParam);
+    }
+  }, [searchParams, subjectId]);
+
   useEffect(() => {
     loadSubjectData();
-    const handleUpdate = () => loadSubjectData();
+    const handleUpdate = (e) => {
+      loadSubjectData();
+      if (e?.detail?.category) {
+        const catKey = e.detail.category.toLowerCase().replace(/\s+/g, '-');
+        if (TAB_KEYS[catKey]) {
+          handleTabChange(TAB_KEYS[catKey]);
+        }
+      }
+    };
     window.addEventListener('class_hub_data_updated', handleUpdate);
     return () => window.removeEventListener('class_hub_data_updated', handleUpdate);
   }, [subjectId]);
@@ -571,16 +666,54 @@ export const SubjectDetailPage = () => {
 
   const tabList = ['All Files', 'Syllabus', 'Notes', 'PPT', 'Question Papers', 'Assignments'];
 
+  const getTabCount = (tab) => {
+    if (tab === 'All Files') return files.length;
+    if (tab === 'Syllabus') {
+      return files.filter(f => f.category === 'Syllabus' || (f.name && f.name.toLowerCase().includes('syllabus'))).length;
+    }
+    if (tab === 'Notes') {
+      return files.filter(f => f.category === 'Notes').length;
+    }
+    if (tab === 'PPT') {
+      return files.filter(f => 
+        f.category === 'PPT' || 
+        (f.name && (f.name.toLowerCase().endsWith('.ppt') || f.name.toLowerCase().endsWith('.pptx'))) || 
+        (f.fileType && (f.fileType.includes('presentation') || f.fileType.includes('powerpoint')))
+      ).length;
+    }
+    if (tab === 'Question Papers') {
+      return files.filter(f => 
+        f.category === 'Question Paper' || 
+        f.category === 'Question Papers' || 
+        f.category === 'Question Bank' || 
+        Boolean(f.examType)
+      ).length;
+    }
+    if (tab === 'Assignments') {
+      return assignments.length;
+    }
+    return 0;
+  };
+
   // Filter files based on active tab and optional module filter
   let displayedFiles = files;
   if (activeTab === 'Syllabus') {
-    displayedFiles = files.filter(f => f.category === 'Syllabus');
+    displayedFiles = files.filter(f => f.category === 'Syllabus' || (f.name && f.name.toLowerCase().includes('syllabus')));
   } else if (activeTab === 'Notes') {
     displayedFiles = files.filter(f => f.category === 'Notes');
   } else if (activeTab === 'PPT') {
-    displayedFiles = files.filter(f => f.category === 'PPT');
+    displayedFiles = files.filter(f => 
+      f.category === 'PPT' || 
+      (f.name && (f.name.toLowerCase().endsWith('.ppt') || f.name.toLowerCase().endsWith('.pptx'))) || 
+      (f.fileType && (f.fileType.includes('presentation') || f.fileType.includes('powerpoint')))
+    );
   } else if (activeTab === 'Question Papers') {
-    displayedFiles = files.filter(f => f.category === 'Question Paper');
+    displayedFiles = files.filter(f => 
+      f.category === 'Question Paper' || 
+      f.category === 'Question Papers' || 
+      f.category === 'Question Bank' || 
+      Boolean(f.examType)
+    );
   } else if (activeTab === 'Assignments') {
     displayedFiles = files.filter(f => f.category === 'Assignment');
   }
@@ -627,10 +760,22 @@ export const SubjectDetailPage = () => {
 
         <div className="flex items-center gap-3 relative z-10 flex-shrink-0">
           <button
-            onClick={() => openUploadModal({
-              semesterId: subject.semesterId,
-              subjectId: subject.id
-            })}
+            onClick={() => {
+              const catMap = {
+                'All Files': 'Notes',
+                'Syllabus': 'Syllabus',
+                'Notes': 'Notes',
+                'PPT': 'PPT',
+                'Question Papers': 'Question Paper',
+                'Assignments': 'Assignment'
+              };
+              openUploadModal({
+                semesterId: subject.semesterId,
+                subjectId: subject.id,
+                moduleNumber: selectedModFilter !== 'all' ? selectedModFilter : undefined,
+                category: catMap[activeTab] || 'Notes'
+              });
+            }}
             className="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-semibold rounded-xl flex items-center gap-2 shadow-lg shadow-indigo-950 transition-all hover:scale-105"
           >
             <Upload className="w-4 h-4" />
@@ -643,24 +788,48 @@ export const SubjectDetailPage = () => {
       <div className="space-y-3 border-b border-slate-800 pb-3">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-2 flex-wrap">
-            {tabList.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-                  activeTab === tab
-                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-950/50'
-                    : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+            {tabList.map((tab) => {
+              const count = getTabCount(tab);
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => handleTabChange(tab)}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+                    isActive
+                      ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-950/50 scale-[1.02]'
+                      : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800'
+                  }`}
+                >
+                  <span>{tab}</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                    isActive ? 'bg-indigo-800 text-white' : 'bg-slate-800 text-slate-400'
+                  }`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
           {activeTab === 'Syllabus' && (
             <span className="text-xs text-teal-400 font-medium">
               Course Syllabus & Scheme
+            </span>
+          )}
+          {activeTab === 'PPT' && (
+            <span className="text-xs text-orange-400 font-medium">
+              Lecture Slides & Presentations (PPT)
+            </span>
+          )}
+          {activeTab === 'Question Papers' && (
+            <span className="text-xs text-emerald-400 font-medium">
+              Internal Tests & University Question Papers
+            </span>
+          )}
+          {activeTab === 'Notes' && (
+            <span className="text-xs text-indigo-400 font-medium">
+              Lecture & Modular Notes
             </span>
           )}
         </div>
@@ -670,7 +839,7 @@ export const SubjectDetailPage = () => {
           <div className="flex items-center gap-1.5 text-xs flex-wrap">
             <span className="text-slate-400 text-xs font-medium mr-1">Optional Module Filter:</span>
             <button
-              onClick={() => setSelectedModFilter('all')}
+              onClick={() => handleModFilterChange('all')}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
                 selectedModFilter === 'all'
                   ? 'bg-indigo-600 text-white font-bold shadow'
@@ -688,7 +857,7 @@ export const SubjectDetailPage = () => {
               return (
                 <button
                   key={m}
-                  onClick={() => setSelectedModFilter(selectedModFilter === String(m) ? 'all' : String(m))}
+                  onClick={() => handleModFilterChange(selectedModFilter === String(m) ? 'all' : String(m))}
                   className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 ${
                     selectedModFilter === String(m)
                       ? 'bg-indigo-600 text-white font-bold shadow'
@@ -710,7 +879,7 @@ export const SubjectDetailPage = () => {
 
           {selectedModFilter !== 'all' && (
             <button
-              onClick={() => setSelectedModFilter('all')}
+              onClick={() => handleModFilterChange('all')}
               className="text-xs text-indigo-400 hover:text-indigo-300 hover:underline"
             >
               Clear filter
@@ -781,6 +950,44 @@ export const SubjectDetailPage = () => {
                 <span>Upload Syllabus Document</span>
               </button>
             </div>
+          ) : activeTab === 'PPT' ? (
+            <div className="glass-panel p-12 rounded-2xl text-center space-y-3 border border-dashed border-orange-800/60">
+              <FileText className="w-10 h-10 text-orange-400 mx-auto" />
+              <h4 className="text-sm font-semibold text-white">No PPT Presentations Uploaded Yet</h4>
+              <p className="text-xs text-slate-400 max-w-sm mx-auto">
+                Upload lecture slides, PPT decks, or module presentations (.pptx, .ppt, .pdf) for {subject.name}.
+              </p>
+              <button
+                onClick={() => openUploadModal({
+                  semesterId: subject.semesterId,
+                  subjectId: subject.id,
+                  category: 'PPT'
+                })}
+                className="px-5 py-2.5 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg shadow-orange-950 transition-all hover:scale-105"
+              >
+                <Upload className="w-3.5 h-3.5" />
+                <span>Upload Presentation (PPT)</span>
+              </button>
+            </div>
+          ) : activeTab === 'Question Papers' ? (
+            <div className="glass-panel p-12 rounded-2xl text-center space-y-3 border border-dashed border-emerald-800/60">
+              <FileText className="w-10 h-10 text-emerald-400 mx-auto" />
+              <h4 className="text-sm font-semibold text-white">No Question Papers Uploaded Yet</h4>
+              <p className="text-xs text-slate-400 max-w-sm mx-auto">
+                Upload Internal Test, Model Exam, or Previous Year university papers for {subject.name}.
+              </p>
+              <button
+                onClick={() => openUploadModal({
+                  semesterId: subject.semesterId,
+                  subjectId: subject.id,
+                  category: 'Question Paper'
+                })}
+                className="px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg shadow-emerald-950 transition-all hover:scale-105"
+              >
+                <Upload className="w-3.5 h-3.5" />
+                <span>Upload Question Paper</span>
+              </button>
+            </div>
           ) : (
             <div className="glass-panel p-12 rounded-2xl text-center space-y-3">
               <FileText className="w-10 h-10 text-slate-600 mx-auto" />
@@ -791,7 +998,8 @@ export const SubjectDetailPage = () => {
               <button
                 onClick={() => openUploadModal({
                   semesterId: subject.semesterId,
-                  subjectId: subject.id
+                  subjectId: subject.id,
+                  category: activeTab === 'Notes' ? 'Notes' : undefined
                 })}
                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2"
               >

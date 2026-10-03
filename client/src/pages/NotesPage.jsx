@@ -115,7 +115,9 @@ export const NotesPage = () => {
         <button
           onClick={() => openUploadModal({
             semesterId: selectedSemester,
-            subjectId: selectedSubject !== 'all' ? selectedSubject : currentSemesterSubjects[0]?.id
+            subjectId: selectedSubject !== 'all' ? selectedSubject : currentSemesterSubjects[0]?.id,
+            moduleNumber: selectedModule !== 'all' ? selectedModule : undefined,
+            category: selectedCategory !== 'all' ? selectedCategory : 'Notes'
           })}
           className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-950 transition-all hover:scale-105"
         >
@@ -261,9 +263,17 @@ export const NotesPage = () => {
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-indigo-950 border border-indigo-800 text-indigo-300">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const tabParam = file.category?.toLowerCase() === 'ppt' ? 'ppt' : file.category?.toLowerCase() === 'question paper' ? 'question-papers' : file.category?.toLowerCase() === 'syllabus' ? 'syllabus' : 'notes';
+                          navigate(`/subjects/${file.subjectId}?tab=${tabParam}`);
+                        }}
+                        className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-indigo-950 hover:bg-indigo-900 border border-indigo-800 text-indigo-300 transition-colors cursor-pointer"
+                        title="Open subject directly in this category"
+                      >
                         {file.subjectName}
-                      </span>
+                      </button>
                       {(file.moduleTag || (file.moduleNumber && file.moduleNumber > 0)) && (
                         <span className="text-xs text-slate-400 font-mono">
                           {file.moduleTag || `Mod ${file.moduleNumber}`}

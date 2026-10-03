@@ -351,21 +351,87 @@ export const SemesterSubjectsPage = () => {
                   </p>
                 </div>
 
-                {/* Modules & File stats breakdown */}
+                {/* Modules & File stats breakdown with direct tab redirects */}
                 <div className="space-y-3 pt-3 border-t border-slate-800/80">
                   <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
-                    <div className="p-2 bg-slate-900/60 rounded-xl border border-slate-800/60">
-                      <p className="text-slate-400">Modules</p>
+                    <div 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/subjects/${sub.id}?tab=all`);
+                      }}
+                      className="p-2 bg-slate-900/60 hover:bg-slate-800/90 rounded-xl border border-slate-800/60 transition-all cursor-pointer group/stat"
+                      title="View all modules & files"
+                    >
+                      <p className="text-slate-400 group-hover/stat:text-white transition-colors">Modules</p>
                       <p className="text-white font-bold mt-0.5">{sub.moduleCount || 5}</p>
                     </div>
-                    <div className="p-2 bg-slate-900/60 rounded-xl border border-slate-800/60">
-                      <p className="text-slate-400">Notes / PPT</p>
+                    <div 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const targetTab = (sub.notesCount === 0 && sub.pptCount > 0) ? 'ppt' : 'notes';
+                        navigate(`/subjects/${sub.id}?tab=${targetTab}`);
+                      }}
+                      className="p-2 bg-slate-900/60 hover:bg-indigo-950/60 rounded-xl border border-slate-800/60 hover:border-indigo-800/60 transition-all cursor-pointer group/stat"
+                      title="Direct to Notes & PPTs"
+                    >
+                      <p className="text-slate-400 group-hover/stat:text-indigo-300 transition-colors">Notes / PPT</p>
                       <p className="text-indigo-300 font-bold mt-0.5">{(sub.notesCount || 0) + (sub.pptCount || 0)}</p>
                     </div>
-                    <div className="p-2 bg-slate-900/60 rounded-xl border border-slate-800/60">
-                      <p className="text-slate-400">Papers</p>
+                    <div 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/subjects/${sub.id}?tab=question-papers`);
+                      }}
+                      className="p-2 bg-slate-900/60 hover:bg-emerald-950/60 rounded-xl border border-slate-800/60 hover:border-emerald-800/60 transition-all cursor-pointer group/stat"
+                      title="Direct to Question Papers"
+                    >
+                      <p className="text-slate-400 group-hover/stat:text-emerald-300 transition-colors">Papers</p>
                       <p className="text-emerald-300 font-bold mt-0.5">{sub.qpCount || 0}</p>
                     </div>
+                  </div>
+
+                  {/* Direct tab shortcuts */}
+                  <div className="flex items-center gap-1.5 pt-1 overflow-x-auto">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/subjects/${sub.id}?tab=syllabus`);
+                      }}
+                      className="px-2 py-0.5 rounded-lg bg-teal-950/50 hover:bg-teal-900/70 border border-teal-800/50 text-[10px] font-semibold text-teal-300 transition-colors"
+                      title="Direct to Syllabus"
+                    >
+                      Syllabus
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/subjects/${sub.id}?tab=notes`);
+                      }}
+                      className="px-2 py-0.5 rounded-lg bg-indigo-950/50 hover:bg-indigo-900/70 border border-indigo-800/50 text-[10px] font-semibold text-indigo-300 transition-colors"
+                      title="Direct to Notes"
+                    >
+                      Notes
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/subjects/${sub.id}?tab=ppt`);
+                      }}
+                      className="px-2 py-0.5 rounded-lg bg-orange-950/50 hover:bg-orange-900/70 border border-orange-800/50 text-[10px] font-semibold text-orange-300 transition-colors"
+                      title="Direct to PPT Slides"
+                    >
+                      PPT
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/subjects/${sub.id}?tab=question-papers`);
+                      }}
+                      className="px-2 py-0.5 rounded-lg bg-emerald-950/50 hover:bg-emerald-900/70 border border-emerald-800/50 text-[10px] font-semibold text-emerald-300 transition-colors"
+                      title="Direct to Question Papers"
+                    >
+                      Papers
+                    </button>
                   </div>
 
                   <div className="flex items-center justify-between text-xs pt-1">
